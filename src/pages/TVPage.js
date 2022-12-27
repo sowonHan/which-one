@@ -1,20 +1,19 @@
 import React from "react";
 
-const MoviePage = () => {
+const TVPage = () => {
   return (
     <>
       <header>헤더, 메뉴</header>
       <section>
-        주간 박스오피스
-        <div>왼쪽에 hover 시 영화 정보 간략하게 뜨기</div>
-        <div>오른쪽에 박스오피스 목록</div>
-      </section>
-      <section>
-        OTT 포함한 인기 영화
+        인기 프로그램
         <div>슬라이드</div>
       </section>
       <section>
-        OTT 포함한 최신 영화
+        최신 프로그램
+        <div>슬라이드</div>
+      </section>
+      <section>
+        방영 중 (되면 해보기)
         <div>슬라이드</div>
       </section>
       <footer>푸터</footer>
@@ -22,4 +21,4 @@ const MoviePage = () => {
   );
 };
 
-export default MoviePage;
+export default TVPage;
