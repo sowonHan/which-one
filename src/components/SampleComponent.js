@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/SampleComponent.scss";
-import { image_TMDB } from "../lib/configTMDB";
+import { image_TMDB } from "../lib/config";
 
 const Item = ({ result }) => {
   return (

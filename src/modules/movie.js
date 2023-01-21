@@ -1,4 +1,4 @@
-import * as api from "../lib/api";
+import * as api from "../lib/apiTMDB";
 
 // 액션 타입 선언
 const GET_POPULAR = "movie/GET_POPULAR";

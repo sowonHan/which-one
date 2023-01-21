@@ -11,3 +11,5 @@ const axiosTMDB = axios.create({
 });
 
 export default axiosTMDB;
+
+export const kofic_key = "c63b8e05f8a42c09f7ead978b94bb128";

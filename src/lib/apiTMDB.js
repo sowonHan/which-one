@@ -1,4 +1,4 @@
-import axiosTMDB from "./configTMDB";
+import axiosTMDB from "./config";
 
 export const getPopular = () =>
   axiosTMDB.get("/movie/popular", {
