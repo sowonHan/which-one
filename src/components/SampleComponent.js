@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/SampleComponent.scss";
-import { image_TMDB } from "../lib/config";
+import { imageTMDB } from "../lib/config";
 
 const Item = ({ result }) => {
   return (
     <div>
       <img
-        src={`${image_TMDB}w185${result.poster_path}`}
+        src={`${imageTMDB}/w185${result.poster_path}`}
         alt={`${result.title}의 포스터`}
       />
       <div>{result.title}</div>

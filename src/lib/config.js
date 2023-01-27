@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const image_TMDB = "https://image.tmdb.org/t/p/";
+export const imageTMDB = "https://image.tmdb.org/t/p";
 
-const axiosTMDB = axios.create({
+export const axiosTMDB = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   params: {
     api_key: "9e9d90a01a1b94f7784bfe77eebb7c9d",
@@ -10,6 +10,9 @@ const axiosTMDB = axios.create({
   },
 });
 
-export default axiosTMDB;
-
-export const kofic_key = "c63b8e05f8a42c09f7ead978b94bb128";
+export const axiosKofic = axios.create({
+  baseURL: "http://kobis.or.kr/kobisopenapi/webservice/rest",
+  params: {
+    api_key: "c63b8e05f8a42c09f7ead978b94bb128",
+  },
+});
