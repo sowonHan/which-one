@@ -1,5 +1,12 @@
 import { axiosTMDB } from "./config";
 
+export const search = (query) =>
+  axiosTMDB.get(`/search/multi`, {
+    params: {
+      query: query,
+    },
+  });
+
 export const getTrending = (type) => axiosTMDB.get(`/trending/${type}/day`);
 
 export const getPopular = (type) =>

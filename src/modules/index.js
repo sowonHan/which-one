@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import sampleReducer from "./movie";
+import movieReducer from "./tmdbMovie";
+import loadingReducer from "./loading";
 
 const rootReducer = combineReducers({
-  sampleReducer,
+  movieReducer,
+  loadingReducer,
 });
 
 export default rootReducer;

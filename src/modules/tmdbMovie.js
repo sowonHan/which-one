@@ -26,3 +26,25 @@ export const getMovieUpcoming = createRequestThunk(
   GET_MOVIE_UPCOMING,
   api.movieUpcoming
 );
+
+// 초기 상태값
+const initialState = {
+  trendingM: null,
+  popularM: null,
+  topM: null,
+  upcoming: null,
+};
+
+// 리듀서
+const movieReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_MOVIE_TRENDING_:
+      return {
+        ...state,
+      };
+    default:
+      return state;
+  }
+};
+
+export default movieReducer;
