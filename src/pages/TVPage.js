@@ -4,16 +4,17 @@ const TVPage = () => {
   return (
     <>
       <header>헤더, 메뉴</header>
+      <section>오늘의 이슈작(HotTv컴포넌트)</section>
       <section>
-        인기 프로그램
+        요즘 트렌드
         <div>슬라이드</div>
       </section>
       <section>
-        최신 프로그램
+        인기 작품
         <div>슬라이드</div>
       </section>
       <section>
-        방영 중 (되면 해보기)
+        평점이 높은 TV 프로그램
         <div>슬라이드</div>
       </section>
       <footer>푸터</footer>

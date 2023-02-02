@@ -1,7 +1,7 @@
 import { axiosTMDB } from "./config";
 
 export const search = (query) =>
-  axiosTMDB.get(`/search/multi`, {
+  axiosTMDB.get("/search/multi", {
     params: {
       query: query,
     },

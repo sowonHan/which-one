@@ -1,6 +1,6 @@
 import React from "react";
 
-const BoxofficeComponent = () => {
+const Boxoffice = () => {
   return (
     <>
       <section>
@@ -94,4 +94,4 @@ const BoxofficeComponent = () => {
   );
 };
 
-export default BoxofficeComponent;
+export default Boxoffice;

@@ -1,9 +1,15 @@
 import React from "react";
+import Header from "./../components/Header";
+import GallerySlide from "./../components/GallerySlide";
+import VideoSlide from "../components/VideoSlide";
+import Similar from "./../components/Similar";
+import Recommendation from "./../components/Recommendation";
+import Footer from "./../components/Footer";
 
 const MovieDetailPage = () => {
   return (
     <>
-      <header>메뉴와 검색창과 로그인</header>
+      <Header />
       <section>
         <div>포스터</div>
         <div>
@@ -31,31 +37,11 @@ const MovieDetailPage = () => {
         </div>
         <p>제작 회사</p>
       </section>
-      <section>
-        <h2>이미지</h2>
-        <div>이미지 슬라이드</div>
-      </section>
-      <section>
-        <h1>영상</h1>
-        <div>영상 슬라이드</div>
-      </section>
-      <section>
-        <h2>비슷한 영화</h2>
-        <div>
-          영화 목록 슬라이드
-          <div>포스터 (get images에서 따와야함)</div>
-          <p>영화 제목</p>
-        </div>
-      </section>
-      <section>
-        <h2>추천 영화</h2>
-        <div>
-          영화 목록 슬라이드
-          <div>포스터</div>
-          <p>영화 제목</p>
-        </div>
-      </section>
-      <footer>푸터</footer>
+      <GallerySlide />
+      <VideoSlide />
+      <Similar />
+      <Recommendation />
+      <Footer />
     </>
   );
 };

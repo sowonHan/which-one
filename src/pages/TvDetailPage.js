@@ -1,9 +1,15 @@
 import React from "react";
+import Header from "./../components/Header";
+import GallerySlide from "./../components/GallerySlide";
+import VideoSlide from "./../components/VideoSlide";
+import Similar from "./../components/Similar";
+import Recommendation from "./../components/Recommendation";
+import Footer from "./../components/Footer";
 
 const TvDetailPage = () => {
   return (
     <>
-      <header>메뉴와 검색창과 로그인</header>
+      <Header />
       <section>
         <div>포스터</div>
         <div>
@@ -31,35 +37,16 @@ const TvDetailPage = () => {
       </section>
       <section>
         <div>
+          {/* details에 있는 거 먼저 쓰고 그 다음에 credit */}
           <div>출연진 이미지</div>
           <p>출연진 이름</p>
         </div>
       </section>
-      <section>
-        <h2>이미지</h2>
-        <div>이미지 슬라이드로 나열</div>
-      </section>
-      <section>
-        <h1>동영상</h1>
-        <div>비디오 슬라이드로 나열</div>
-      </section>
-      <section>
-        <h2>비슷한 TV 프로그램</h2>
-        <div>
-          TV프로그램 목록 슬라이드
-          <div>포스터 (get images에서 따와야함)</div>
-          <p>TV프로그램 제목</p>
-        </div>
-      </section>
-      <section>
-        <h2>추천 TV프로그램</h2>
-        <div>
-          TV프로그램 목록 슬라이드
-          <div>포스터</div>
-          <p>TV프로그램 제목</p>
-        </div>
-      </section>
-      <footer>푸터</footer>
+      <GallerySlide />
+      <VideoSlide />
+      <Similar />
+      <Recommendation />
+      <Footer />
     </>
   );
 };
