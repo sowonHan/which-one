@@ -1,7 +1,14 @@
 import { axiosTMDB } from "./config";
 
-export const search = (query) =>
+export const searchAll = (query) =>
   axiosTMDB.get("/search/multi", {
+    params: {
+      query: query,
+    },
+  });
+
+export const searchMovie = (query) =>
+  axiosTMDB.get("/search/movie", {
     params: {
       query: query,
     },

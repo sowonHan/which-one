@@ -3,13 +3,15 @@ import createRequestThunk from "../lib/createRequestThunk";
 
 // 액션타입
 const GET_MOVIE_TRENDING = "tmdb/GET_MOVIE_TRENDING";
+const GET_MOVIE_TRENDING_SUCCESS = "tmdb/GET_MOVIE_TRENDING_SUCCESS";
 const GET_MOVIE_POPULAR = "tmdb/GET_MOVIE_POPULAR";
+const GET_MOVIE_POPULAR_SUCCESS = "tmdb/GET_MOVIE_POPULAR_SUCCESS";
 const GET_MOVIE_TOP_RATED = "tmdb/GET_MOVIE_TOP_RATED";
+const GET_MOVIE_TOP_RATED_SUCCESS = "tmdb/GET_MOVIE_TOP_RATED_SUCCESS";
 const GET_MOVIE_UPCOMING = "tmdb/GET_MOVIE_UPCOMING";
+const GET_MOVIE_UPCOMING_SUCCESS = "tmdb/GET_MOVIE_UPCOMING_SUCCESS";
 
 // 액션함수
-const movie = "movie";
-
 export const getMovieTrending = createRequestThunk(
   GET_MOVIE_TRENDING,
   api.getTrending
@@ -38,9 +40,25 @@ const initialState = {
 // 리듀서
 const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIE_TRENDING_:
+    case GET_MOVIE_TRENDING_SUCCESS:
       return {
         ...state,
+        trendingM: action.payload,
+      };
+    case GET_MOVIE_POPULAR_SUCCESS:
+      return {
+        ...state,
+        popularM: action.payload,
+      };
+    case GET_MOVIE_TOP_RATED_SUCCESS:
+      return {
+        ...state,
+        topM: action.payload,
+      };
+    case GET_MOVIE_UPCOMING_SUCCESS:
+      return {
+        ...state,
+        upcoming: action.payload,
       };
     default:
       return state;

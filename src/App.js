@@ -1,13 +1,10 @@
 import React from "react";
-import MainPage from "./pages/MainPage";
-import SampleContainer from "./containers/SampleContainer";
+import MoviePage from "./pages/MoviePage";
 
 function App() {
   return (
     <>
-      <MainPage />
-      <hr />
-      <SampleContainer />
+      <MoviePage />
     </>
   );
 }

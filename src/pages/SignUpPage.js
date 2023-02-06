@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingUpPage = () => {
+const SignUpPage = () => {
   return (
     <>
       <header>헤더, 메뉴</header>
@@ -46,4 +46,4 @@ const SingUpPage = () => {
   );
 };
 
-export default SingUpPage;
+export default SignUpPage;
