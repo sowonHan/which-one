@@ -1,4 +1,3 @@
-import React from "react";
 import { startLoading, finishLoading } from "../modules/loading";
 
 const createRequestThunk = (type, request) => {

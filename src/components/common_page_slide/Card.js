@@ -1,10 +1,20 @@
 import React from "react";
+import { imageTMDB } from "../../lib/config";
 
-const Card = () => {
+const Card = ({ result }) => {
   return (
     <>
-      <div>포스터</div>
-      <h5>작품 제목</h5>
+      <div className="link">
+        <div>
+          <img
+            src={`${imageTMDB}/w185${result.poster_path}`}
+            alt={`${result.title}의 포스터`}
+          />
+        </div>
+        <div>
+          <h6>{result.title}</h6>
+        </div>
+      </div>
     </>
   );
 };
