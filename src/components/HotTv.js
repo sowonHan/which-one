@@ -1,18 +1,41 @@
 import React from "react";
+import ReactPlayer from "react-player/youtube";
+import "../styles/HotTv.scss";
 
-const HotTv = () => {
+const HotTv = ({ trailer, program, loadingTrailer }) => {
   return (
     <>
-      <div>
-        <div>
-          배경으로 유튜브 영상 재생 (비디오 가져오기 불편하면 그냥 백드롭 이미지
-          깔기)
-          <div>
-            트렌드 1위 TV 프로그램 포스터 이미지
-            <h1>TV 프로그램 제목</h1>
+      <section>
+        <div className="player-wrapper">
+          {loadingTrailer ? (
+            <div className="player-loading" />
+          ) : (
+            trailer && (
+              <ReactPlayer
+                className="player"
+                url={`https://www.youtube.com/embed/${trailer.key}?enablejsapi=1&origin=http://localhost:3000`}
+                playing={true}
+                loop={true}
+                muted={true}
+                width="100%"
+                height="100%"
+              />
+            )
+          )}
+          <div className="text-container">
+            {loadingTrailer ? (
+              <div></div>
+            ) : (
+              program && (
+                <div>
+                  <h1 className="en-name">{program.name}</h1>
+                  <h6 className="origin-name">{program.original_name}</h6>
+                </div>
+              )
+            )}
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

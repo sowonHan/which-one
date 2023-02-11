@@ -1,4 +1,5 @@
 import { axiosTMDB } from "./config";
+import axios from "axios";
 
 export const searchAll = (query) =>
   axiosTMDB.get("/search/multi", {
@@ -50,5 +51,12 @@ export const tvDetails = (id) =>
     params: {
       append_to_response:
         "content_ratings,credits,images,keywords,recommendations,similar,videos,watch/providers",
+    },
+  });
+
+export const getVideo = (id) =>
+  axios.get(`https://api.themoviedb.org/3/tv/${id}/videos`, {
+    params: {
+      api_key: "9e9d90a01a1b94f7784bfe77eebb7c9d",
     },
   });

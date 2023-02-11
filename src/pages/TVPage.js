@@ -1,10 +1,11 @@
 import React from "react";
+import TrailerContainer from "../containers/TrailerContainer";
 
 const TVPage = () => {
   return (
     <>
       <header>헤더, 메뉴</header>
-      <section>오늘의 이슈작(HotTv컴포넌트)</section>
+      <TrailerContainer />
       <section>
         요즘 트렌드
         <div>슬라이드</div>
