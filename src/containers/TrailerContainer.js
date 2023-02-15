@@ -1,6 +1,6 @@
 import React from "react";
 import HotTv from "../components/HotTv";
-import { getTrailer } from "../modules/promoTv";
+import { getTrailer } from "../modules/trailer";
 import useApi from "../hooks/useApi";
 import { connect } from "react-redux";
 

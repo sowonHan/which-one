@@ -2,9 +2,9 @@ import * as api from "../lib/apiTMDB";
 import { startLoading, finishLoading } from "./loading";
 
 // 액션타입
-const GET_TRAILER = "triailer/GET_TRAILER";
-const GET_TRAILER_SUCCESS = "triailer/GET_TRAILER_SUCCESS";
-const GET_TRAILER_FAILURE = "triailer/GET_TRAILER_FAILURE";
+const GET_TRAILER = "trailer/GET_TRAILER";
+const GET_TRAILER_SUCCESS = "trailer/GET_TRAILER_SUCCESS";
+const GET_TRAILER_FAILURE = "trailer/GET_TRAILER_FAILURE";
 
 // thunk 함수
 export const getTrailer = () => async (dispatch) => {

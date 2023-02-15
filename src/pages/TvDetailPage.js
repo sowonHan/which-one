@@ -44,6 +44,7 @@ const TvDetailPage = () => {
       </section>
       <GallerySlide />
       <VideoSlide />
+      {/* 비슷한영화 추천영화 그냥 공용슬라이드 써도 될듯 */}
       <Similar />
       <Recommendation />
       <Footer />
