@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Boxoffice from "../components/Boxoffice";
+import Boxoffice from "../components/boxoffice/Boxoffice";
 import useApi from "../hooks/useApi";
 import {
   getWeeklyMain,
