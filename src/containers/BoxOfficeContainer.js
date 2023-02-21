@@ -2,37 +2,42 @@ import React from "react";
 import { connect } from "react-redux";
 import Boxoffice from "../components/boxoffice/Boxoffice";
 import useApi from "../hooks/useApi";
-import {
-  getWeeklyMain,
-  getWeeklyArt,
-  getDailyMain,
-  getDailyArt,
-} from "../modules/boxoffice";
+import { getBoxOffice } from "../modules/boxoffice";
 
 const BoxOfficeContainer = ({
-  getWeeklyMain,
-  getWeeklyArt,
-  getDailyMain,
-  getDailyArt,
+  getBoxOffice,
   weekMain,
   weekArt,
   dayMain,
   dayArt,
-  loadingWeekMain,
-  loadingWeekArt,
-  loadingDayMain,
-  loadingDayArt,
+  detail,
+  poster,
+  loadingBoxOffice,
 }) => {
-  useApi(getWeeklyMain);
-  useApi(getWeeklyArt);
-  useApi(getDailyMain);
-  useApi(getDailyArt);
+  useApi(getBoxOffice);
 
   return (
-    <div>
-      <div></div>
-    </div>
+    <Boxoffice
+      weekMain={weekMain}
+      weekArt={weekArt}
+      dayMain={dayMain}
+      dayArt={dayArt}
+      detail={detail}
+      poster={poster}
+      loadingBoxOffice={loadingBoxOffice}
+    />
   );
 };
 
-export default BoxOfficeContainer;
+export default connect(
+  ({ boxOfficeReducer, loadingReducer }) => ({
+    weekMain: boxOfficeReducer.weekMain,
+    weekArt: boxOfficeReducer.weekArt,
+    dayMain: boxOfficeReducer.dayMain,
+    dayArt: boxOfficeReducer.dayArt,
+    detail: boxOfficeReducer.detail,
+    poster: boxOfficeReducer.poster,
+    loadingBoxOffice: loadingReducer["boxOffice/GET_BOXOFFICE"],
+  }),
+  { getBoxOffice }
+)(BoxOfficeContainer);

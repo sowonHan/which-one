@@ -1,15 +1,32 @@
 import React from "react";
+import { FcMinus, FcUp, FcDown } from "react-icons/fc";
+import "../../styles/ListItem.scss";
 
-const ListItem = () => {
+const ListItem = ({ datum }) => {
+  // const {rank, rankInten, rankOldAndNew, movieNm} = datum;
+
   return (
     <tr>
-      <td>순번</td>
-      <td>영화 제목</td>
-      <td>누적관객수</td>
-      <td>상영횟수</td>
+      <td>{datum.rank}</td>
+      <td>{datum.movieNm}</td>
+      <td>{datum.audiAcc}</td>
+      <td>{datum.showCnt}</td>
       <td>
-        증감률(신규진입시 New 표시,기존항목일시 순위증감분 표시) 기호
-        <span>증감률 숫자</span>
+        {datum.rankOldAndNew === "NEW" ? (
+          <span>{datum.rankOldAndNew}</span>
+        ) : datum.rankInten === "0" ? (
+          <FcMinus />
+        ) : Number(datum.rankInten) > 0 ? (
+          <p className="up">
+            <FcUp />
+            <span>{Number(datum.rankInten)}</span>
+          </p>
+        ) : (
+          <p className="down">
+            <FcDown />
+            <span>{Number(datum.rankInten)}</span>
+          </p>
+        )}
       </td>
     </tr>
   );
