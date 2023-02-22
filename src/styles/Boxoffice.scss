@@ -1,4 +1,22 @@
+.slider-wrapper {
+  margin: 0 auto;
+  width: 1400px;
+}
+
 .nav-container,
 .page-container {
   display: flex;
+}
+
+.page-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-prev:before {
+  color: black;
+}
+
+.slick-next:before {
+  color: black;
 }

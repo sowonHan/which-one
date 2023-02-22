@@ -1,14 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { axiosKofic } from "../lib/config";
+import { paramDaily } from "../lib/apiKofic";
+// import { boxOfficeMainDaily } from "../lib/apiKofic";
 
 const Sample = () => {
-  let now = new Date();
-  const year = now.getFullYear();
-  const month = ("0" + (now.getMonth() + 1)).slice(-2);
-  const dateDaily = new Date(now.setDate(now.getDate() - 1)).getDate();
-  const paramDaily = year + month + dateDaily;
-
   useEffect(() => {
     const func = async () => {
       try {
@@ -20,7 +16,9 @@ const Sample = () => {
             },
           }
         );
+
         console.log(response);
+        console.log(`export한 param값: ${paramDaily}`);
       } catch (e) {
         console.log(`에러: ${e}`);
       }

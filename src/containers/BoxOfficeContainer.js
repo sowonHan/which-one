@@ -1,29 +1,35 @@
 import React from "react";
 import { connect } from "react-redux";
-import Boxoffice from "../components/boxoffice/Boxoffice";
+import Container from "../components/boxoffice/Container";
 import useApi from "../hooks/useApi";
 import { getBoxOffice } from "../modules/boxoffice";
 
 const BoxOfficeContainer = ({
   getBoxOffice,
-  weekMain,
-  weekArt,
-  dayMain,
-  dayArt,
-  detail,
-  poster,
+  mainDay,
+  // mainWeek,
+  // artDay,
+  // artWeek,
+  // detail,
+  // poster,
   loadingBoxOffice,
 }) => {
-  useApi(getBoxOffice);
+  let now = new Date();
+  const year = now.getFullYear();
+  const month = ("0" + (now.getMonth() + 1)).slice(-2);
+  const dateDaily = new Date(now.setDate(now.getDate() - 1)).getDate();
+  const paramDaily = year + month + dateDaily;
+
+  useApi(getBoxOffice, paramDaily);
 
   return (
     <Boxoffice
-      weekMain={weekMain}
-      weekArt={weekArt}
-      dayMain={dayMain}
-      dayArt={dayArt}
-      detail={detail}
-      poster={poster}
+      mainDay={mainDay}
+      // mainWeek={mainWeek}
+      // artDay={artDay}
+      // artWeek={artWeek}
+      // detail={detail}
+      // poster={poster}
       loadingBoxOffice={loadingBoxOffice}
     />
   );
@@ -31,12 +37,12 @@ const BoxOfficeContainer = ({
 
 export default connect(
   ({ boxOfficeReducer, loadingReducer }) => ({
-    weekMain: boxOfficeReducer.weekMain,
-    weekArt: boxOfficeReducer.weekArt,
-    dayMain: boxOfficeReducer.dayMain,
-    dayArt: boxOfficeReducer.dayArt,
-    detail: boxOfficeReducer.detail,
-    poster: boxOfficeReducer.poster,
+    mainDay: boxOfficeReducer.mainDay,
+    // mainWeek: boxOfficeReducer.mainWeek,
+    // artDay: boxOfficeReducer.artDay,
+    // artWeek: boxOfficeReducer.artWeek,
+    // detail: boxOfficeReducer.detail,
+    // poster: boxOfficeReducer.poster,
     loadingBoxOffice: loadingReducer["boxOffice/GET_BOXOFFICE"],
   }),
   { getBoxOffice }

@@ -1,9 +1,10 @@
 import React from "react";
+import "../../styles/View.scss";
 
-const Detail = () => {
+const View = ({ detail, poster, loadingBoxOffice }) => {
   return (
     <>
-      <div>
+      <div className="container">
         <div>포스터(tmdb search로 이미지 받아와야함)</div>
         <div>
           영화 상세정보 api
@@ -25,4 +26,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default View;
