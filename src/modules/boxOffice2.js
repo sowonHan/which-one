@@ -1,11 +1,21 @@
 import { boxOfficeMainDaily } from "../lib/apiKofic";
-import { axiosKofic } from "../lib/config";
-import createRequestThunk from "../lib/createRequestThunk";
+// import createRequestThunk from "../lib/createRequestThunk";
 
 const GET_BOXOFFICE = "boxOffice/GET_BOXOFFICE";
 const GET_BOXOFFICE_SUCCESS = "boxOffice/GET_BOXOFFICE_SUCCESS";
+const GET_BOXOFFICE_ERROR = "boxOffice/GET_BOXOFFICE_ERROR";
 
-export const getBox = createRequestThunk(GET_BOXOFFICE, boxOfficeMainDaily);
+// export const getBox = createRequestThunk(GET_BOXOFFICE, boxOfficeMainDaily);
+
+export const getBox = () => async (dispatch) => {
+  dispatch({ type: GET_BOXOFFICE }); // 요청이 시작됨
+  try {
+    const result = await boxOfficeMainDaily(); // API 호출
+    dispatch({ type: GET_BOXOFFICE_SUCCESS, result }); // 성공
+  } catch (e) {
+    dispatch({ type: GET_BOXOFFICE_ERROR, error: e }); // 실패
+  }
+};
 
 const initialState = {
   result: null,

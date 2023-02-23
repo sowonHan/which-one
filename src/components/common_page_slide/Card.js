@@ -1,5 +1,6 @@
 import React from "react";
 import { imageTMDB } from "../../lib/config";
+import "../../styles/Card.scss";
 
 const Card = ({ result }) => {
   return (
@@ -7,7 +8,8 @@ const Card = ({ result }) => {
       <div className="link">
         <div>
           <img
-            src={`${imageTMDB}/w185${result.poster_path}`}
+            className="image"
+            src={`${imageTMDB}/original${result.poster_path}`}
             alt={`${result.title}의 포스터`}
           />
         </div>

@@ -24,7 +24,8 @@ const Container = ({
     : result
     ? console.log(result)
     : console.log("결과 없어");
-  console.log(result);
+  console.log(result === null);
+  console.log(result === undefined);
 
   const [mainData, setMainData] = useState(mainDay);
   const [artData, setArtData] = useState(artDay);

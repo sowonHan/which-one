@@ -5,7 +5,7 @@ import {
   getMoviePopular,
   getMovieTopRated,
   getMovieUpcoming,
-} from "../modules/tmdbMovie";
+} from "../modules/slideMovie";
 import useApi from "../hooks/useApi";
 import { connect } from "react-redux";
 
