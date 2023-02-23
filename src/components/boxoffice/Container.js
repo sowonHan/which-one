@@ -28,6 +28,8 @@ const Container = ({
 
   const [mainData, setMainData] = useState(mainDay);
   const [artData, setArtData] = useState(artDay);
+
+  // 아래 버튼코드가 잘 작동하는지 아직 확인을 못 해서 남겨둔 주석들......
   // const onToDayMain = useCallback(() => {
   //   return mainData === mainDay ? mainData : setMainData(dayMain);
   // }, [mainData, mainDay]);
@@ -43,6 +45,7 @@ const Container = ({
   // const onToWeekArt = useCallback(() => {
   //   return artData === weekArt ? artData : setArtData(weekArt);
   // }, [artData, weekArt]);
+
   const onDay = useCallback(
     (type, e) => {
       if (type === "main") {
@@ -97,6 +100,7 @@ const Container = ({
 
   return (
     <>
+      {/* 아래 렌더링 부분은 원래 BoxOfficeContainer.js 컨테이너 컴포넌트로부터 받은 props들로 채울 예정이었던 거라, 신경쓰지 않으셔도 돼요!!! */}
       <div className="slider-wrapper">
         <Slider {...settings}>
           <div>
