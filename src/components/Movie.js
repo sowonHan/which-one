@@ -1,16 +1,16 @@
 import React from "react";
 import Loading from "./common_page_slide/Loading";
 import Carousel from "./common_page_slide/Carousel";
-import Card from "./common_page_slide/Card";
+import MovieCard from "./common_page_slide/MovieCard";
 
 const Movie = ({
-  trendingM,
-  popularM,
-  topM,
+  trend,
+  popular,
+  top,
   upcoming,
   loadingTrend,
   loadingPopular,
-  loadingTopM,
+  loadingTop,
   loadingUpcoming,
 }) => {
   return (
@@ -20,10 +20,10 @@ const Movie = ({
         {loadingTrend ? (
           <Loading />
         ) : (
-          trendingM && (
+          trend && (
             <Carousel>
-              {trendingM.results.map((result) => (
-                <Card result={result} key={result.id} />
+              {trend.results.map((result) => (
+                <MovieCard result={result} key={result.id} />
               ))}
             </Carousel>
           )
@@ -34,10 +34,10 @@ const Movie = ({
         {loadingPopular ? (
           <Loading />
         ) : (
-          popularM && (
+          popular && (
             <Carousel>
-              {popularM.results.map((result) => (
-                <Card result={result} key={result.id} />
+              {popular.results.map((result) => (
+                <MovieCard result={result} key={result.id} />
               ))}
             </Carousel>
           )
@@ -45,13 +45,13 @@ const Movie = ({
       </section>
       <section>
         <h1>평점이 높은 영화</h1>
-        {loadingTopM ? (
+        {loadingTop ? (
           <Loading />
         ) : (
-          topM && (
+          top && (
             <Carousel>
-              {topM.results.map((result) => (
-                <Card result={result} key={result.id} />
+              {top.results.map((result) => (
+                <MovieCard result={result} key={result.id} />
               ))}
             </Carousel>
           )
@@ -65,7 +65,7 @@ const Movie = ({
           upcoming && (
             <Carousel>
               {upcoming.results.map((result) => (
-                <Card result={result} key={result.id} />
+                <MovieCard result={result} key={result.id} />
               ))}
             </Carousel>
           )

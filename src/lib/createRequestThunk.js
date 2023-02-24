@@ -1,10 +1,10 @@
 import { startLoading, finishLoading } from "../modules/loading";
 
-const createRequestThunk = (type, request) => {
+const createRequestThunk = (type, request, params = null) => {
   const SUCCESS = `${type}_SUCCESS`;
   const FAILURE = `${type}_FAILURE`;
 
-  return (params) => async (dispatch) => {
+  return () => async (dispatch) => {
     dispatch({ type });
     dispatch(startLoading(type));
     try {

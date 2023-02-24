@@ -1,17 +1,14 @@
 import { combineReducers } from "redux";
-import movieReducer from "./slideMovie";
 import loadingReducer from "./loading";
-import trailerReducer from "./trailer";
+import movieReducer from "./slideMovie";
 import TvReducer from "./slideTv";
-// import boxOfficeReducer from "./boxoffice";
-import boxReducer from "./boxOffice2";
+import issueReducer from "./issue";
 
 const rootReducer = combineReducers({
   loadingReducer,
   movieReducer,
-  trailerReducer,
   TvReducer,
-  boxReducer,
+  issueReducer,
 });
 
 export default rootReducer;

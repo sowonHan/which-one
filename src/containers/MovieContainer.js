@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import Movie from "../components/Movie";
 import {
   getMovieTrending,
@@ -7,38 +8,35 @@ import {
   getMovieUpcoming,
 } from "../modules/slideMovie";
 import useApi from "../hooks/useApi";
-import { connect } from "react-redux";
 
 const MovieContainer = ({
   getMovieTrending,
   getMoviePopular,
   getMovieTopRated,
   getMovieUpcoming,
-  trendingM,
-  popularM,
-  topM,
+  trend,
+  popular,
+  top,
   upcoming,
   loadingTrend,
   loadingPopular,
-  loadingTopM,
+  loadingTop,
   loadingUpcoming,
 }) => {
-  const movie = "movie";
-
-  useApi(getMovieTrending, movie);
-  useApi(getMoviePopular, movie);
-  useApi(getMovieTopRated, movie);
+  useApi(getMovieTrending);
+  useApi(getMoviePopular);
+  useApi(getMovieTopRated);
   useApi(getMovieUpcoming);
 
   return (
     <Movie
-      trendingM={trendingM}
-      popularM={popularM}
-      topM={topM}
+      trend={trend}
+      popular={popular}
+      top={top}
       upcoming={upcoming}
       loadingTrend={loadingTrend}
       loadingPopular={loadingPopular}
-      loadingTopM={loadingTopM}
+      loadingTop={loadingTop}
       loadingUpcoming={loadingUpcoming}
     />
   );
@@ -46,14 +44,14 @@ const MovieContainer = ({
 
 export default connect(
   ({ movieReducer, loadingReducer }) => ({
-    trendingM: movieReducer.trendingM,
-    popularM: movieReducer.popularM,
-    topM: movieReducer.topM,
+    trend: movieReducer.trend,
+    popular: movieReducer.popular,
+    top: movieReducer.top,
     upcoming: movieReducer.upcoming,
-    loadingTrend: loadingReducer["tmdb/GET_MOVIE_TRENDING"],
-    loadingPopular: loadingReducer["tmdb/GET_MOVIE_POPULAR"],
-    loadingTopM: loadingReducer["tmdb/GET_MOVIE_TOP_RATED"],
-    loadingUpcoming: loadingReducer["tmdb/GET_MOVIE_UPCOMING"],
+    loadingTrend: loadingReducer["movie/GET_TRENDING"],
+    loadingPopular: loadingReducer["movie/GET_POPULAR"],
+    loadingTopM: loadingReducer["movie/GET_TOP_RATED"],
+    loadingUpcoming: loadingReducer["movie/GET_UPCOMING"],
   }),
   { getMovieTrending, getMoviePopular, getMovieTopRated, getMovieUpcoming }
 )(MovieContainer);

@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "./../components/Header";
-import TrailerContainer from "../containers/TrailerContainer";
-import MainTv from "../components/MainTv";
+import IssueContainer from "../containers/IssueContainer";
+import TvContainer from "../containers/TvContainer";
 import Footer from "./../components/Footer";
 
 const TVPage = () => {
   return (
     <>
       <Header />
-      <TrailerContainer />
-      <MainTv />
+      <IssueContainer />
+      <TvContainer />
       <Footer />
     </>
   );

@@ -1,27 +1,20 @@
 import React from "react";
 import Loading from "./common_page_slide/Loading";
 import Carousel from "./common_page_slide/Carousel";
-import TvCard from "./common_page_slide/TvCard";
+import Card from "./common_page_slide/Card";
 
-const MainTv = ({
-  trend,
-  popular,
-  top,
-  loadingTrend,
-  loadingPopular,
-  loadingTop,
-}) => {
+const Test = ({ tr, p, top, loadingTr, loadingP, loadingTop }) => {
   return (
     <>
       <section>
         <h1>요즘 트렌드</h1>
-        {loadingTrend ? (
+        {loadingTr ? (
           <Loading />
         ) : (
-          trend && (
+          tr && (
             <Carousel>
-              {trend.results.map((result) => (
-                <TvCard result={result} key={result.id} />
+              {tr.results.map((result) => (
+                <Card result={result} key={result.id} />
               ))}
             </Carousel>
           )
@@ -29,13 +22,13 @@ const MainTv = ({
       </section>
       <section>
         <h1>인기 프로그램</h1>
-        {loadingPopular ? (
+        {loadingP ? (
           <Loading />
         ) : (
-          popular && (
+          p && (
             <Carousel>
-              {popular.results.map((result) => (
-                <TvCard result={result} key={result.id} />
+              {p.results.map((result) => (
+                <Card result={result} key={result.id} />
               ))}
             </Carousel>
           )
@@ -49,7 +42,7 @@ const MainTv = ({
           top && (
             <Carousel>
               {top.results.map((result) => (
-                <TvCard result={result} key={result.id} />
+                <Card result={result} key={result.id} />
               ))}
             </Carousel>
           )
@@ -59,4 +52,4 @@ const MainTv = ({
   );
 };
 
-export default MainTv;
+export default Test;

@@ -2,60 +2,63 @@ import * as api from "../lib/apiTMDB";
 import createRequestThunk from "../lib/createRequestThunk";
 
 // 액션타입
-const GET_MOVIE_TRENDING = "tmdb/GET_MOVIE_TRENDING";
-const GET_MOVIE_TRENDING_SUCCESS = "tmdb/GET_MOVIE_TRENDING_SUCCESS";
-const GET_MOVIE_POPULAR = "tmdb/GET_MOVIE_POPULAR";
-const GET_MOVIE_POPULAR_SUCCESS = "tmdb/GET_MOVIE_POPULAR_SUCCESS";
-const GET_MOVIE_TOP_RATED = "tmdb/GET_MOVIE_TOP_RATED";
-const GET_MOVIE_TOP_RATED_SUCCESS = "tmdb/GET_MOVIE_TOP_RATED_SUCCESS";
-const GET_MOVIE_UPCOMING = "tmdb/GET_MOVIE_UPCOMING";
-const GET_MOVIE_UPCOMING_SUCCESS = "tmdb/GET_MOVIE_UPCOMING_SUCCESS";
+const GET_TRENDING = "movie/GET_TRENDING";
+const GET_TRENDING_SUCCESS = "movie/GET_TRENDING_SUCCESS";
+const GET_POPULAR = "movie/GET_POPULAR";
+const GET_POPULAR_SUCCESS = "movie/GET_POPULAR_SUCCESS";
+const GET_TOP_RATED = "movie/GET_TOP_RATED";
+const GET_TOP_RATED_SUCCESS = "movie/GET_TOP_RATED_SUCCESS";
+const GET_UPCOMING = "movie/GET_UPCOMING";
+const GET_UPCOMING_SUCCESS = "movie/GET_UPCOMING_SUCCESS";
 
 // 액션함수
 export const getMovieTrending = createRequestThunk(
-  GET_MOVIE_TRENDING,
-  api.getTrending
+  GET_TRENDING,
+  api.getTrending,
+  "movie"
 );
 export const getMoviePopular = createRequestThunk(
-  GET_MOVIE_POPULAR,
-  api.getPopular
+  GET_POPULAR,
+  api.getPopular,
+  "movie"
 );
 export const getMovieTopRated = createRequestThunk(
-  GET_MOVIE_TOP_RATED,
-  api.getTopRated
+  GET_TOP_RATED,
+  api.getTopRated,
+  "movie"
 );
 export const getMovieUpcoming = createRequestThunk(
-  GET_MOVIE_UPCOMING,
+  GET_UPCOMING,
   api.movieUpcoming
 );
 
 // 초기 상태값
 const initialState = {
-  trendingM: null,
-  popularM: null,
-  topM: null,
+  trend: null,
+  popular: null,
+  top: null,
   upcoming: null,
 };
 
 // 리듀서
 const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MOVIE_TRENDING_SUCCESS:
+    case GET_TRENDING_SUCCESS:
       return {
         ...state,
-        trendingM: action.payload,
+        trend: action.payload,
       };
-    case GET_MOVIE_POPULAR_SUCCESS:
+    case GET_POPULAR_SUCCESS:
       return {
         ...state,
-        popularM: action.payload,
+        popular: action.payload,
       };
-    case GET_MOVIE_TOP_RATED_SUCCESS:
+    case GET_TOP_RATED_SUCCESS:
       return {
         ...state,
-        topM: action.payload,
+        top: action.payload,
       };
-    case GET_MOVIE_UPCOMING_SUCCESS:
+    case GET_UPCOMING_SUCCESS:
       return {
         ...state,
         upcoming: action.payload,

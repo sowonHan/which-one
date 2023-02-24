@@ -1,12 +1,12 @@
 import React from "react";
-import View from "./View";
-import List from "./List";
-import ListItem from "./ListItem";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../../styles/Boxoffice.scss";
-import { useState, useCallback } from "react";
+// import View from "./View";
+// import List from "./List";
+// import ListItem from "./ListItem";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import "../../styles/Boxoffice.scss";
+// import { useState, useCallback } from "react";
 
 const Container = ({
   mainDay,
@@ -24,11 +24,11 @@ const Container = ({
     : result
     ? console.log(result)
     : console.log("결과 없어");
-  console.log(result === null);
-  console.log(result === undefined);
+  console.log(`null인가 ${result === null}`);
+  console.log(`undefined인가 ${result === undefined}`);
 
-  const [mainData, setMainData] = useState(mainDay);
-  const [artData, setArtData] = useState(artDay);
+  // const [mainData, setMainData] = useState(mainDay);
+  // const [artData, setArtData] = useState(artDay);
 
   // 아래 버튼코드가 잘 작동하는지 아직 확인을 못 해서 남겨둔 주석들......
   // const onToDayMain = useCallback(() => {
@@ -47,62 +47,71 @@ const Container = ({
   //   return artData === weekArt ? artData : setArtData(weekArt);
   // }, [artData, weekArt]);
 
-  const onDay = useCallback(
-    (type, e) => {
-      if (type === "main") {
-        if (mainData === mainDay) {
-          e.preventDefault();
-        } else {
-          setMainData(mainDay);
-          return mainData;
-        }
-      } else {
-        if (artData === artDay) {
-          e.preventDefault();
-        } else {
-          setArtData(artDay);
-          return artData;
-        }
-      }
-    },
-    [mainData, artData, mainDay, artDay]
-  );
+  // const onDay = useCallback(
+  //   (type, e) => {
+  //     if (type === "main") {
+  //       if (mainData === mainDay) {
+  //         e.preventDefault();
+  //       } else {
+  //         setMainData(mainDay);
+  //         return mainData;
+  //       }
+  //     } else {
+  //       if (artData === artDay) {
+  //         e.preventDefault();
+  //       } else {
+  //         setArtData(artDay);
+  //         return artData;
+  //       }
+  //     }
+  //   },
+  //   [mainData, artData, mainDay, artDay]
+  // );
 
-  const onWeek = useCallback(
-    (type, e) => {
-      if (type === "main") {
-        if (mainData === mainWeek) {
-          e.preventDefault();
-        } else {
-          setMainData(mainWeek);
-          return mainData;
-        }
-      } else {
-        if (artData === artWeek) {
-          e.preventDefault();
-        } else {
-          setArtData(artWeek);
-          return artData;
-        }
-      }
-    },
-    [mainData, artData, mainWeek, artWeek]
-  );
+  // const onWeek = useCallback(
+  //   (type, e) => {
+  //     if (type === "main") {
+  //       if (mainData === mainWeek) {
+  //         e.preventDefault();
+  //       } else {
+  //         setMainData(mainWeek);
+  //         return mainData;
+  //       }
+  //     } else {
+  //       if (artData === artWeek) {
+  //         e.preventDefault();
+  //       } else {
+  //         setArtData(artWeek);
+  //         return artData;
+  //       }
+  //     }
+  //   },
+  //   [mainData, artData, mainWeek, artWeek]
+  // );
 
-  let settings = {
-    dots: false,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    arrows: true,
-  };
+  // let settings = {
+  //   dots: false,
+  //   infinite: false,
+  //   speed: 300,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   initialSlide: 0,
+  //   arrows: true,
+  // };
 
   return (
     <>
+      <div>
+        <h2>{result.showRange}</h2>
+        {result.dailyBoxOfficeList.map((item) => (
+          <div>
+            <p>{item.rank}</p>
+            <p>{item.movieNm}</p>
+          </div>
+        ))}
+      </div>
       {/* 아래 렌더링 부분은 원래 BoxOfficeContainer.js 컨테이너 컴포넌트로부터 받은 props들로 채울 예정이었던 거라, 신경쓰지 않으셔도 돼요!!! */}
-      <div className="slider-wrapper">
+      {/* <div className="slider-wrapper">
         <Slider {...settings}>
           <div>
             <div className="nav-container">
@@ -153,7 +162,7 @@ const Container = ({
             </div>
           </div>
         </Slider>
-      </div>
+      </div> */}
     </>
   );
 };

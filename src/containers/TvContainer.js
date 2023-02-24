@@ -1,46 +1,44 @@
 import React from "react";
 import { connect } from "react-redux";
+import MainTv from "./../components/MainTv";
 import { getTvTrending, getTvPopular, getTvTopRated } from "../modules/slideTv";
 import useApi from "../hooks/useApi";
-import MainTv from "./../components/MainTv";
 
 const TvContainer = ({
   getTvTrending,
   getTvPopular,
   getTvTopRated,
-  trendingTv,
-  popularTv,
-  topTv,
+  trend,
+  popular,
+  top,
   loadingTrend,
   loadingPopular,
-  loadingTopTv,
+  loadingTop,
 }) => {
-  const tv = "tv";
-
-  useApi(getTvTrending, tv);
-  useApi(getTvPopular, tv);
-  useApi(getTvTopRated, tv);
+  useApi(getTvTrending);
+  useApi(getTvPopular);
+  useApi(getTvTopRated);
 
   return (
     <MainTv
-      trendingTv={trendingTv}
-      popularTv={popularTv}
-      topTv={topTv}
+      trend={trend}
+      popular={popular}
+      top={top}
       loadingTrend={loadingTrend}
       loadingPopular={loadingPopular}
-      loadingTopTv={loadingTopTv}
+      loadingTop={loadingTop}
     />
   );
 };
 
 export default connect(
   ({ TvReducer, loadingReducer }) => ({
-    trendingTv: TvReducer.trendingTv,
-    popularTv: TvReducer.popularTv,
-    topTv: TvReducer.topTv,
-    loadingTrend: loadingReducer["tv/GET_TV_TRENDING"],
-    loadingPopular: loadingReducer["tv/GET_TV_POPULAR"],
-    loadingTopTv: loadingReducer["tv/GET_TV_TOP_RATED"],
+    trend: TvReducer.trend,
+    popular: TvReducer.popular,
+    top: TvReducer.top,
+    loadingTrend: loadingReducer["slideTv/GET_TRENDING"],
+    loadingPopular: loadingReducer["slideTv/GET_POPULAR"],
+    loadingTop: loadingReducer["slideTv/GET_TOP_RATED"],
   }),
   { getTvTrending, getTvPopular, getTvTopRated }
 )(TvContainer);

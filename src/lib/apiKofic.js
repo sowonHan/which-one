@@ -12,7 +12,7 @@ export const paramDaily = year + month + dateDaily;
 export const boxOfficeMainDaily = () => {
   axiosKofic.get("/boxoffice/searchDailyBoxOfficeList.json", {
     params: {
-      targetDt: "20230221",
+      targetDt: "20230223",
     },
   });
 };

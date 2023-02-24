@@ -2,47 +2,53 @@ import * as api from "../lib/apiTMDB";
 import createRequestThunk from "../lib/createRequestThunk";
 
 // 액션타입
-const GET_TV_TRENDING = "tv/GET_TV_TRENDING";
-const GET_TV_TRENDING_SUCCESS = "tv/GET_TV_TRENDING_SUCCESS";
-const GET_TV_POPULAR = "tv/GET_TV_POPULAR";
-const GET_TV_POPULAR_SUCCESS = "tv/GET_TV_POPULAR_SUCCESS";
-const GET_TV_TOP_RATED = "tv/GET_TV_TOP_RATED";
-const GET_TV_TOP_RATED_SUCCESS = "tv/GET_TV_TOP_RATED_SUCCESS";
+const GET_TRENDING = "slideTv/GET_TRENDING";
+const GET_TRENDING_SUCCESS = "slideTv/GET_TRENDING_SUCCESS";
+const GET_POPULAR = "slideTv/GET_POPULAR";
+const GET_POPULAR_SUCCESS = "slideTv/GET_POPULAR_SUCCESS";
+const GET_TOP_RATED = "slideTv/GET_TOP_RATED";
+const GET_TOP_RATED_SUCCESS = "slideTv/GET_TOP_RATED_SUCCESS";
 
 // 액션함수
 export const getTvTrending = createRequestThunk(
-  GET_TV_TRENDING,
-  api.getTrending
+  GET_TRENDING,
+  api.getTrending,
+  "tv"
 );
-export const getTvPopular = createRequestThunk(GET_TV_POPULAR, api.getPopular);
+export const getTvPopular = createRequestThunk(
+  GET_POPULAR,
+  api.getPopular,
+  "tv"
+);
 export const getTvTopRated = createRequestThunk(
-  GET_TV_TOP_RATED,
-  api.getTopRated
+  GET_TOP_RATED,
+  api.getTopRated,
+  "tv"
 );
 
 // 초깃값 및 리듀서
 const initialState = {
-  trendingTv: null,
-  popularTv: null,
-  topTv: null,
+  trend: null,
+  popular: null,
+  top: null,
 };
 
 const TvReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_TV_TRENDING_SUCCESS:
+    case GET_TRENDING_SUCCESS:
       return {
         ...state,
-        trendingTv: action.payload,
+        trend: action.payload,
       };
-    case GET_TV_POPULAR_SUCCESS:
+    case GET_POPULAR_SUCCESS:
       return {
         ...state,
-        popularTv: action.payload,
+        popular: action.payload,
       };
-    case GET_TV_TOP_RATED_SUCCESS:
+    case GET_TOP_RATED_SUCCESS:
       return {
         ...state,
-        topTv: action.payload,
+        top: action.payload,
       };
     default:
       return state;

@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import Container from "../components/boxoffice/Container";
 import { getBox } from "../modules/boxOffice2";
-import useApi from "../hooks/useApi";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 
 const BoxContainer2 = ({ getBox, result, loadingResult }) => {
-  // useApi(getBox);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +17,7 @@ const BoxContainer2 = ({ getBox, result, loadingResult }) => {
 export default connect(
   ({ boxReducer, loadingReducer }) => ({
     result: boxReducer.result,
-    loadingResult: loadingReducer["boxOffice/GET_BOXOFFICE"],
+    loadingResult: loadingReducer["boxOffice/GET_BOXOFFICE_SUCCESS"],
   }),
   { getBox }
 )(BoxContainer2);
