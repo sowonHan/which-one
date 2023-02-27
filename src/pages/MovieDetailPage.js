@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./../components/Header";
 import GallerySlide from "./../components/GallerySlide";
-import VideoSlide from "../components/VideoSlide";
 import Similar from "./../components/Similar";
 import Recommendation from "./../components/Recommendation";
 import Footer from "./../components/Footer";
@@ -38,7 +37,6 @@ const MovieDetailPage = () => {
         <p>제작 회사</p>
       </section>
       <GallerySlide />
-      <VideoSlide />
       {/* 비슷한영화 추천영화 그냥 공용슬라이드 써도 될듯 */}
       <Similar />
       <Recommendation />

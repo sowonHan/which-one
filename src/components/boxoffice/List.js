@@ -14,9 +14,7 @@ const List = ({ children }) => {
             <th>증감률</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>{children}</tr>
-        </tbody>
+        <tbody>{children}</tbody>
       </table>
     </div>
   );

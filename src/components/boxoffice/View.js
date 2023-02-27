@@ -1,13 +1,22 @@
 import React from "react";
 import "../../styles/View.scss";
+import { imageTMDB } from "../../lib/config";
 
-const View = ({ detail, poster, loadingBoxOffice }) => {
+const View = ({ poster }) => {
   return (
     <>
       <div className="container">
-        <div>포스터(tmdb search로 이미지 받아와야함)</div>
-        <div>
-          영화 상세정보 api
+        <div className="poster">
+          {poster ? (
+            <img
+              src={`${imageTMDB}/w300${poster.poster_path}`}
+              alt={`${poster.title}의 포스터`}
+            />
+          ) : (
+            <div className="loading"></div>
+          )}
+        </div>
+        <div className="informaiton">
           <h4>영화명</h4>
           <p>원제목(한국영화일시 영문 출력)</p>
           <hr />

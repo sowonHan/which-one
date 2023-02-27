@@ -1,12 +1,12 @@
 import React from "react";
 // import MoviePage from "./pages/MoviePage";
 // import TvPage from "./pages/TvPage";
-import Sample from "./components/Sample";
+import BoxOffice from "./components/boxoffice/BoxOffice";
 
 function App() {
   return (
     <>
-      <Sample />
+      <BoxOffice />
     </>
   );
 }

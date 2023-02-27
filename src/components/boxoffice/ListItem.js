@@ -2,29 +2,29 @@ import React from "react";
 import { FcMinus, FcUp, FcDown } from "react-icons/fc";
 import "../../styles/ListItem.scss";
 
-const ListItem = ({ datum }) => {
+const ListItem = ({ day }) => {
   // const {rank, rankInten, rankOldAndNew, movieNm} = datum;
 
   return (
     <tr>
-      <td>{datum.rank}</td>
-      <td>{datum.movieNm}</td>
-      <td>{datum.audiAcc}</td>
-      <td>{datum.showCnt}</td>
+      <td>{day.rank}</td>
+      <td>{day.movieNm}</td>
+      <td>{day.audiAcc.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+      <td>{day.showCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
       <td>
-        {datum.rankOldAndNew === "NEW" ? (
-          <span>{datum.rankOldAndNew}</span>
-        ) : datum.rankInten === "0" ? (
+        {day.rankOldAndNew === "NEW" ? (
+          <span>{day.rankOldAndNew}</span>
+        ) : day.rankInten === "0" ? (
           <FcMinus />
-        ) : Number(datum.rankInten) > 0 ? (
+        ) : Number(day.rankInten) > 0 ? (
           <p className="up">
             <FcUp />
-            <span>{Number(datum.rankInten)}</span>
+            <span>{Number(day.rankInten)}</span>
           </p>
         ) : (
           <p className="down">
             <FcDown />
-            <span>{Number(datum.rankInten)}</span>
+            <span>{Math.abs(Number(day.rankInten))}</span>
           </p>
         )}
       </td>
