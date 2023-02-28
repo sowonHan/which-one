@@ -1,6 +1,7 @@
 .container {
   margin: 0 auto;
   width: 1500px;
+  height: 700px;
 }
 
 .nav-container,
@@ -9,7 +10,8 @@
 }
 
 .page-container {
-  justify-content: center;
+  margin-top: 40px;
+  justify-content: space-around;
   align-items: center;
 }
 

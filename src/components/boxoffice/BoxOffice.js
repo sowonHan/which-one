@@ -8,12 +8,16 @@ import ListItem from "./ListItem";
 import "../../styles/BoxOffice.scss";
 
 const BoxOffice = () => {
+  const [loading, setLoading] = useState(false);
   const [days, setDays] = useState(null);
   const [weeks, setWeeks] = useState(null);
   const [details, setDetails] = useState(null);
   const [posters, setPosters] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("day");
+  const [now, setNow] = useState({
+    detail: "",
+    poster: "",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +41,7 @@ const BoxOffice = () => {
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     setTimeout(async () => {
       try {
         const response2 = await axiosKofic.get(
@@ -82,57 +87,107 @@ const BoxOffice = () => {
         setPosters(response4);
         console.log("포스터 검색");
         console.log(response4);
+
+        console.log("테스트");
+        console.log(now);
       } catch (e) {
         console.log(e);
       }
-    }, 2000);
-  }, [days.dailyBoxOfficeList]);
+    }, 500);
+    setLoading(false);
+  }, [days]);
 
-  // const onWeek = useCallback(async () => {
-  //   try {
-  //     const response = await axiosKofic.get(
-  //       "/boxoffice/searchWeeklyBoxOfficeList.json",
-  //       {
-  //         params: {
-  //           targetDt: paramWeekly,
-  //           weekGb: "0",
-  //         },
-  //       }
-  //     );
+  const onDay = useCallback(
+    (action, e) => {
+      if (status === action) {
+        e.preventDefault();
+      } else {
+        setStatus("day");
+      }
+    },
+    [status]
+  );
 
-  //     if (items.hasOwnProperty('"dailyBoxOfficeList')) {
-  //     }
+  const onWeek = useCallback(
+    (action, e) => {
+      if (status === action) {
+        e.preventDefault();
+      } else {
+        setStatus("week");
+      }
+    },
+    [status]
+  );
 
-  //     setData(response.data);
-  //   } catch (e) {
-  //     console.log(`에러: ${e}`);
-  //   }
-  // }, [response, items]);
+  const onView = (movieNm) => {
+    setNow({
+      detail: details.find(
+        (detail) => detail.data.movieInfoResult.movieInfo.movieNm === movieNm
+      ),
+      poster: posters.find((poster) => poster.config.params.query === movieNm),
+    });
+    console.log(now);
+  };
 
   return (
     <section>
-      <div className="container">
-        <div className="nav-container">
-          <h5>{}</h5>
-          <button>일별</button>
-          <button>주간</button>
+      {loading ? (
+        <div className="container">
+          <div className="nav-container">
+            <div></div>
+            <button>일별</button>
+            <button>주간</button>
+          </div>
+          <div className="page-container">
+            <View />
+            <List>
+              <tr>
+                <td>불러오는 중...</td>
+              </tr>
+            </List>
+          </div>
         </div>
-        <div className="page-container">
-          {}
-          <View />
-          <List>
-            {loading ? (
-              <td>불러오는 중...</td>
-            ) : days ? (
-              days.dailyBoxOfficeList.map((day) => (
-                <ListItem key={day.rnum} day={day} />
-              ))
-            ) : (
-              <td>데이터를 불러올 수 없습니다.</td>
-            )}
-          </List>
+      ) : (
+        <div className="container">
+          <div className="nav-container">
+            <h5>
+              {loading
+                ? ""
+                : days
+                ? status === "day"
+                  ? days.showRange
+                  : weeks.showRange
+                : ""}
+            </h5>
+            <button onClick={(e) => onDay("day", e)}>일별</button>
+            <button onClick={(e) => onWeek("week", e)}>주간</button>
+          </div>
+          <div className="page-container">
+            <View details={details} posters={posters} now={now} />
+            <List onView={onView}>
+              {loading ? (
+                <tr>
+                  <td>불러오는 중...</td>
+                </tr>
+              ) : days ? (
+                status === "day" ? (
+                  days.dailyBoxOfficeList.map((data) => (
+                    <ListItem key={data.rnum} data={data} onView={onView} />
+                  ))
+                ) : (
+                  weeks.weeklyBoxOfficeList.map((data) => (
+                    <ListItem key={data.rnum} data={data} onView={onView} />
+                  ))
+                )
+              ) : (
+                <tr>
+                  <td>데이터를 불러올 수 없습니다.</td>
+                </tr>
+              )}
+            </List>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };

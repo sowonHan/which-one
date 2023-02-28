@@ -2,29 +2,27 @@ import React from "react";
 import { FcMinus, FcUp, FcDown } from "react-icons/fc";
 import "../../styles/ListItem.scss";
 
-const ListItem = ({ day }) => {
-  // const {rank, rankInten, rankOldAndNew, movieNm} = datum;
-
+const ListItem = ({ data, onView }) => {
   return (
-    <tr>
-      <td>{day.rank}</td>
-      <td>{day.movieNm}</td>
-      <td>{day.audiAcc.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
-      <td>{day.showCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+    <tr onMouseOver={() => onView(data.movieNm)}>
+      <td>{data.rank}</td>
+      <td>{data.movieNm}</td>
+      <td>{data.audiAcc.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+      <td>{data.showCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
       <td>
-        {day.rankOldAndNew === "NEW" ? (
-          <span>{day.rankOldAndNew}</span>
-        ) : day.rankInten === "0" ? (
+        {data.rankOldAndNew === "NEW" ? (
+          <span>{data.rankOldAndNew}</span>
+        ) : data.rankInten === "0" ? (
           <FcMinus />
-        ) : Number(day.rankInten) > 0 ? (
+        ) : Number(data.rankInten) > 0 ? (
           <p className="up">
-            <FcUp />
-            <span>{Number(day.rankInten)}</span>
+            <FcUp className="up-icon" />
+            <span>{Number(data.rankInten)}</span>
           </p>
         ) : (
           <p className="down">
             <FcDown />
-            <span>{Math.abs(Number(day.rankInten))}</span>
+            <span>{Math.abs(Number(data.rankInten))}</span>
           </p>
         )}
       </td>
