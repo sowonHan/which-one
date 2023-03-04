@@ -15,6 +15,13 @@ export const searchMovie = (query) =>
     },
   });
 
+export const searchTv = (query) =>
+  axiosTMDB.get("/search/tv", {
+    params: {
+      query: query,
+    },
+  });
+
 export const getTrending = (type) => axiosTMDB.get(`/trending/${type}/day`);
 
 export const getPopular = (type) =>
@@ -42,7 +49,8 @@ export const movieDetails = (id) =>
   axiosTMDB.get(`/movie/${id}`, {
     params: {
       append_to_response:
-        "credits,images,keywords,recommendations,release_dates,similar,videos,watch/providers",
+        "credits,images,keywords,recommendations,release_dates,similar,watch/providers",
+      include_image_language: "en",
     },
   });
 
@@ -50,13 +58,7 @@ export const tvDetails = (id) =>
   axiosTMDB.get(`/tv/${id}`, {
     params: {
       append_to_response:
-        "content_ratings,credits,images,keywords,recommendations,similar,videos,watch/providers",
-    },
-  });
-
-export const getVideo = (id) =>
-  axios.get(`https://api.themoviedb.org/3/tv/${id}/videos`, {
-    params: {
-      api_key: "9e9d90a01a1b94f7784bfe77eebb7c9d",
+        "content_ratings,credits,images,keywords,recommendations,similar,watch/providers",
+      include_image_language: "en",
     },
   });

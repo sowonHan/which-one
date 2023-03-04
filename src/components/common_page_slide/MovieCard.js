@@ -1,11 +1,12 @@
 import React from "react";
 import { imageTMDB } from "../../lib/config";
+import { Link } from "react-router-dom";
 import "../../styles/Card.scss";
 
-const MovieCard = ({ result }) => {
+const MovieCard = ({ result, linkUrl }) => {
   return (
     <>
-      <div className="link">
+      <Link to={linkUrl} className="link">
         <div>
           <img
             className="image"
@@ -16,7 +17,7 @@ const MovieCard = ({ result }) => {
         <div>
           <h6>{result.title}</h6>
         </div>
-      </div>
+      </Link>
     </>
   );
 };

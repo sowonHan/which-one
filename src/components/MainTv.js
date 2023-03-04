@@ -21,7 +21,11 @@ const MainTv = ({
           trend && (
             <Carousel>
               {trend.results.map((result) => (
-                <TvCard result={result} key={result.id} />
+                <TvCard
+                  result={result}
+                  key={result.id}
+                  linkUrl={`/tv/${result.id}`}
+                />
               ))}
             </Carousel>
           )
@@ -35,7 +39,11 @@ const MainTv = ({
           popular && (
             <Carousel>
               {popular.results.map((result) => (
-                <TvCard result={result} key={result.id} />
+                <TvCard
+                  result={result}
+                  key={result.id}
+                  linkUrl={`/tv/${result.id}`}
+                />
               ))}
             </Carousel>
           )
@@ -49,7 +57,11 @@ const MainTv = ({
           top && (
             <Carousel>
               {top.results.map((result) => (
-                <TvCard result={result} key={result.id} />
+                <TvCard
+                  result={result}
+                  key={result.id}
+                  linkUrl={`/tv/${result.id}`}
+                />
               ))}
             </Carousel>
           )

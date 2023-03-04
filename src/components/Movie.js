@@ -23,7 +23,11 @@ const Movie = ({
           trend && (
             <Carousel>
               {trend.results.map((result) => (
-                <MovieCard result={result} key={result.id} />
+                <MovieCard
+                  result={result}
+                  key={result.id}
+                  linkUrl={`/movie/${result.id}`}
+                />
               ))}
             </Carousel>
           )
@@ -37,7 +41,11 @@ const Movie = ({
           popular && (
             <Carousel>
               {popular.results.map((result) => (
-                <MovieCard result={result} key={result.id} />
+                <MovieCard
+                  result={result}
+                  key={result.id}
+                  linkUrl={`/movie/${result.id}`}
+                />
               ))}
             </Carousel>
           )
@@ -51,7 +59,11 @@ const Movie = ({
           top && (
             <Carousel>
               {top.results.map((result) => (
-                <MovieCard result={result} key={result.id} />
+                <MovieCard
+                  result={result}
+                  key={result.id}
+                  linkUrl={`/movie/${result.id}`}
+                />
               ))}
             </Carousel>
           )
@@ -65,7 +77,11 @@ const Movie = ({
           upcoming && (
             <Carousel>
               {upcoming.results.map((result) => (
-                <MovieCard result={result} key={result.id} />
+                <MovieCard
+                  result={result}
+                  key={result.id}
+                  linkUrl={`/movie/${result.id}`}
+                />
               ))}
             </Carousel>
           )
