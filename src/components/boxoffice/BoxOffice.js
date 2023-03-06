@@ -76,8 +76,6 @@ const BoxOffice = () => {
           })
         );
         setDetails(response3);
-        console.log("상세정보 api");
-        console.log(response3);
 
         const response4 = await Promise.all(
           filterings.map((filtering) => {
@@ -85,11 +83,6 @@ const BoxOffice = () => {
           })
         );
         setPosters(response4);
-        console.log("포스터 검색");
-        console.log(response4);
-
-        console.log("테스트");
-        console.log(now);
       } catch (e) {
         console.log(e);
       }
@@ -126,7 +119,6 @@ const BoxOffice = () => {
       ),
       poster: posters.find((poster) => poster.config.params.query === movieNm),
     });
-    console.log(now);
   };
 
   return (

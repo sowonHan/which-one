@@ -1,0 +1,22 @@
+.nav-web {
+  display: flex;
+}
+
+.menu-button {
+  display: flex;
+
+  li {
+    list-style: none;
+    margin: 10px;
+  }
+}
+
+.nav-mobile {
+  display: none;
+}
+
+Link,
+a {
+  color: inherit;
+  text-decoration: none;
+}

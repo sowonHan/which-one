@@ -1,5 +1,4 @@
 import { axiosTMDB } from "./config";
-import axios from "axios";
 
 export const searchAll = (query) =>
   axiosTMDB.get("/search/multi", {
@@ -50,7 +49,7 @@ export const movieDetails = (id) =>
     params: {
       append_to_response:
         "credits,images,keywords,recommendations,release_dates,similar,watch/providers",
-      include_image_language: "en",
+      include_image_language: "en,null",
     },
   });
 
@@ -59,6 +58,6 @@ export const tvDetails = (id) =>
     params: {
       append_to_response:
         "content_ratings,credits,images,keywords,recommendations,similar,watch/providers",
-      include_image_language: "en",
+      include_image_language: "en,null",
     },
   });

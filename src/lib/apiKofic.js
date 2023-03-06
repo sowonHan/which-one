@@ -1,14 +1,17 @@
 import { axiosKofic } from "./config";
 
-let now1 = new Date();
-let now2 = new Date();
-const year = now1.getFullYear();
-const month = ("0" + (now1.getMonth() + 1)).slice(-2);
-const dateWeekly = new Date(now1.setDate(now1.getDate() - 7)).getDate();
-const dateDaily = new Date(now2.setDate(now2.getDate() - 1)).getDate();
+let dayAgo = new Date(Date.parse(new Date()) - 1 * 1000 * 60 * 60 * 24);
+let weekAgo = new Date(Date.parse(new Date()) - 7 * 1000 * 60 * 60 * 24);
 
-export const paramWeekly = year + month + dateWeekly;
-export const paramDaily = year + month + dateDaily;
+export const paramDaily =
+  dayAgo.getFullYear() +
+  ("0" + (dayAgo.getMonth() + 1)).slice(-2) +
+  ("00" + dayAgo.getDate()).slice(-2);
+
+export const paramWeekly =
+  weekAgo.getFullYear() +
+  ("0" + (weekAgo.getMonth() + 1)).slice(-2) +
+  ("00" + weekAgo.getDate()).slice(-2);
 
 export const boxOfficeDetail = (id) =>
   axiosKofic.get("/movie/searchMovieInfo.json", {

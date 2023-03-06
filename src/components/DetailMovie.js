@@ -2,6 +2,7 @@ import React from "react";
 import GallerySlide from "./../components/GallerySlide";
 
 const DetailMovie = ({ details, loadingDetails }) => {
+  console.log(details);
   return (
     <>
       <section>

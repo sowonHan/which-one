@@ -1,13 +1,12 @@
 import React from "react";
-import Header from "./../components/Header";
 import MovieContainer from "../containers/MovieContainer";
+import BoxOffice from "./../components/boxoffice/BoxOffice";
 import Footer from "./../components/Footer";
 
 const MoviePage = () => {
   return (
     <>
-      <Header />
-      <section>박스오피스 컴포넌트</section>
+      <BoxOffice />
       <MovieContainer />
       <Footer />
     </>
