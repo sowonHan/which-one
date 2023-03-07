@@ -7,6 +7,9 @@ import TvPage from "./pages/TvPage";
 import NotFound from "./pages/NotFound";
 import MovieDetailPage from "./pages/MovieDetailPage";
 import TvDetailPage from "./pages/TvDetailPage";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../../styles/Carousel.scss";
 
 function App() {
   return (

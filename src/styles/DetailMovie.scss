@@ -1,0 +1,50 @@
+.load-color {
+  background-color: gray;
+}
+
+.first-con {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .poster {
+    width: 300px;
+    height: 420px;
+    object-fit: cover;
+  }
+
+  .big-text {
+    font-size: 3rem;
+  }
+}
+
+.credit {
+  width: 150px;
+  height: auto;
+  // object-fit: cover;
+}
+
+.load-gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .sample {
+    width: 300px;
+    height: 200px;
+    background-color: gray;
+  }
+}
+
+.similar,
+.recommend {
+  width: 190px;
+  height: 280px;
+  object-fit: cover;
+}
+
+.buy,
+.rent,
+.flatrate {
+  display: flex;
+}

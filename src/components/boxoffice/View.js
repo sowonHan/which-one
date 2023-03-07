@@ -14,7 +14,7 @@ const View = ({ details, posters, now }) => {
           {poster === "" ? (
             posters ? (
               <img
-                src={`${imageTMDB}/w300${sampleImg.poster_path}`}
+                src={`${imageTMDB}/w342${sampleImg.poster_path}`}
                 alt={`${sampleImg.title}의 포스터`}
               />
             ) : (
@@ -22,7 +22,7 @@ const View = ({ details, posters, now }) => {
             )
           ) : (
             <img
-              src={`${imageTMDB}/w300${poster.data.results[0].poster_path}`}
+              src={`${imageTMDB}/w342${poster.data.results[0].poster_path}`}
               alt={`${poster.data.results[0].title}의 포스터`}
             />
           )}

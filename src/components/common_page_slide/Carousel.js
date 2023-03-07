@@ -1,8 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../../styles/Carousel.scss";
 
 const Carousel = ({ children }) => {
   let settings = {
@@ -11,8 +8,6 @@ const Carousel = ({ children }) => {
     speed: 400,
     slidesToShow: 8,
     slidesToScroll: 2,
-    initialSlide: 0,
-    arrows: true,
     responsive: [
       {
         breakpoint: 1680,
