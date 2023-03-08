@@ -49,7 +49,7 @@ export const movieDetails = (id) =>
     params: {
       append_to_response:
         "credits,images,keywords,recommendations,release_dates,similar,watch/providers",
-      include_image_language: "en,null",
+      include_image_language: "ko,null",
     },
   });
 
@@ -58,6 +58,6 @@ export const tvDetails = (id) =>
     params: {
       append_to_response:
         "content_ratings,credits,images,keywords,recommendations,similar,watch/providers",
-      include_image_language: "en,null",
+      include_image_language: "ko,null",
     },
   });

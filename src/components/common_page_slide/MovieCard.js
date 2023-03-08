@@ -8,11 +8,15 @@ const MovieCard = ({ result, linkUrl }) => {
     <>
       <Link to={linkUrl} className="link">
         <div>
-          <img
-            className="image"
-            src={`${imageTMDB}/w300${result.poster_path}`}
-            alt={`${result.title}의 포스터`}
-          />
+          {result.poster_path ? (
+            <img
+              className="card-image"
+              src={`${imageTMDB}/w300${result.poster_path}`}
+              alt={`${result.title}의 포스터`}
+            />
+          ) : (
+            <div className="no-image">No Image</div>
+          )}
         </div>
         <div>
           <h6>{result.title}</h6>

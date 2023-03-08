@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import "../../styles/Carousel.scss";
 
 const Carousel = ({ children }) => {
   let settings = {
@@ -56,7 +57,7 @@ const Carousel = ({ children }) => {
 
   return (
     <>
-      <Slider className="slide__custom" {...settings}>
+      <Slider className="slide-custom" {...settings}>
         {children}
       </Slider>
     </>

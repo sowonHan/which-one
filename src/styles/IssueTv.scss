@@ -30,18 +30,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.poster {
-  width: 300px;
-  height: auto;
+  .poster {
+    width: 300px;
+    height: auto;
+    display: block;
+  }
 }
 
 .text-container {
   min-width: 300px;
-}
 
-.origin-name,
-.en-name {
-  color: whitesmoke;
+  .origin-name,
+  .en-name {
+    color: whitesmoke;
+  }
 }

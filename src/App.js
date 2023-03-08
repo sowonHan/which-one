@@ -9,7 +9,7 @@ import MovieDetailPage from "./pages/MovieDetailPage";
 import TvDetailPage from "./pages/TvDetailPage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../styles/Carousel.scss";
+import "./App.scss";
 
 function App() {
   return (

@@ -1,0 +1,14 @@
+.flatrate {
+  display: flex;
+  align-items: center;
+
+  .logo-con {
+    margin-left: 20px;
+
+    .logo {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+  }
+}

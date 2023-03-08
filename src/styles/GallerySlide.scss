@@ -1,0 +1,19 @@
+.backdrops {
+  display: block;
+  width: 300px;
+  height: 169px;
+  object-fit: cover;
+}
+
+.posters {
+  display: block;
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+}
+
+.slide-poster,
+.slide-backdrop {
+  width: 90vw;
+  margin: 0 auto;
+}
