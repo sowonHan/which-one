@@ -55,34 +55,36 @@ const BoxOffice = () => {
         );
         setWeeks(response2.data.boxOfficeResult);
 
-        const obj = [
-          ...days.dailyBoxOfficeList,
-          ...response2.data.boxOfficeResult.weeklyBoxOfficeList,
-        ];
+        if (days) {
+          const obj = [
+            ...days.dailyBoxOfficeList,
+            ...response2.data.boxOfficeResult.weeklyBoxOfficeList,
+          ];
 
-        const filterings = obj.filter((value, idx, arr) => {
-          return (
-            arr.findIndex((item) => item.movieNm === value.movieNm) === idx
+          const filterings = obj.filter((value, idx, arr) => {
+            return (
+              arr.findIndex((item) => item.movieNm === value.movieNm) === idx
+            );
+          });
+
+          const response3 = await Promise.all(
+            filterings.map((filtering) => {
+              return axiosKofic.get("/movie/searchMovieInfo.json", {
+                params: {
+                  movieCd: filtering.movieCd,
+                },
+              });
+            })
           );
-        });
+          setDetails(response3);
 
-        const response3 = await Promise.all(
-          filterings.map((filtering) => {
-            return axiosKofic.get("/movie/searchMovieInfo.json", {
-              params: {
-                movieCd: filtering.movieCd,
-              },
-            });
-          })
-        );
-        setDetails(response3);
-
-        const response4 = await Promise.all(
-          filterings.map((filtering) => {
-            return searchMovie(filtering.movieNm);
-          })
-        );
-        setPosters(response4);
+          const response4 = await Promise.all(
+            filterings.map((filtering) => {
+              return searchMovie(filtering.movieNm);
+            })
+          );
+          setPosters(response4);
+        }
       } catch (e) {
         console.log(e);
       }

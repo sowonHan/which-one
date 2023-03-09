@@ -20,10 +20,10 @@ const Streaming = ({ details }) => {
               </div>
             ))
           ) : (
-            <p>없음</p>
+            <p> 없음</p>
           )
         ) : (
-          <p>없음</p>
+          <p> 없음</p>
         )}
       </div>
     </>

@@ -3,8 +3,9 @@ import { imageTMDB } from "../lib/config";
 import Streaming from "./Streaming";
 import Cast from "./Cast";
 import GallerySlide from "./../components/GallerySlide";
-import Carousel from "./common_page_slide/Carousel";
 import MovieCard from "./common_page_slide/MovieCard";
+import Similar from "./Similar";
+import Recommendation from "./Recommendation";
 import "../styles/DetailMovie.scss";
 
 const DetailMovie = ({ details, loadingDetails }) => {
@@ -17,7 +18,9 @@ const DetailMovie = ({ details, loadingDetails }) => {
           (result) => result.iso_3166_1 === "KR"
         );
         if (korea.length) {
-          return korea[0].release_dates[0].release_date.substr(0, 10);
+          return korea[0].release_dates[
+            korea[0].release_dates.length - 1
+          ].release_date.substr(0, 10);
         } else {
           return "개봉 정보 없음";
         }
@@ -36,7 +39,26 @@ const DetailMovie = ({ details, loadingDetails }) => {
           (result) => result.iso_3166_1 === "KR"
         );
         if (korea.length) {
-          return korea[0].release_dates[0].certification;
+          if (korea[0].release_dates[0].certification === "") {
+            if (korea[0].release_dates.length > 1) {
+              const another = korea[0].release_dates.find(
+                (date) => date.certification !== ""
+              );
+              if (another.certification === "All") {
+                return "전체관람가";
+              } else {
+                return `${another.certification}세 이상 관람가`;
+              }
+            } else {
+              return "등급 정보 없음";
+            }
+          } else {
+            if (korea[0].release_dates[0].certification === "All") {
+              return "전체관람가";
+            } else {
+              return `${korea[0].release_dates[0].certification}세 이상 관람가`;
+            }
+          }
         } else {
           const origin = details.release_dates.results.filter(
             (result) =>
@@ -193,10 +215,10 @@ const DetailMovie = ({ details, loadingDetails }) => {
                           )
                         )
                       ) : (
-                        <p>없음</p>
+                        <p> 없음</p>
                       )
                     ) : (
-                      <p>없음</p>
+                      <p> 없음</p>
                     )}
                   </div>
                   <Streaming details={details} />
@@ -251,7 +273,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
             <GallerySlide details={details} />
             <section>
               <h2>이 작품과 비슷한 영화</h2>
-              <Carousel>
+              <Similar details={details}>
                 {details.similar.results.map((result) => (
                   <MovieCard
                     key={result.id}
@@ -259,11 +281,11 @@ const DetailMovie = ({ details, loadingDetails }) => {
                     linkUrl={`/movie/${result.id}`}
                   />
                 ))}
-              </Carousel>
+              </Similar>
             </section>
             <section>
               <h2>이 작품이 재미있었다면 추천드려요</h2>
-              <Carousel>
+              <Recommendation details={details}>
                 {details.recommendations.results.map((result) => (
                   <MovieCard
                     key={result.id}
@@ -271,7 +293,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
                     linkUrl={`/movie/${result.id}`}
                   />
                 ))}
-              </Carousel>
+              </Recommendation>
             </section>
           </main>
         )

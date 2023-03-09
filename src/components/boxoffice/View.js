@@ -1,6 +1,7 @@
 import React from "react";
-import "../../styles/View.scss";
 import { imageTMDB } from "../../lib/config";
+import { Link } from "react-router-dom";
+import "../../styles/View.scss";
 
 const View = ({ details, posters, now }) => {
   const sampleImg = posters ? posters[0].data.results[0] : "";
@@ -13,18 +14,25 @@ const View = ({ details, posters, now }) => {
         <div className="poster">
           {poster === "" ? (
             posters ? (
-              <img
-                src={`${imageTMDB}/w342${sampleImg.poster_path}`}
-                alt={`${sampleImg.title}의 포스터`}
-              />
+              <Link to={`/movie/${sampleImg.id}`} className="poster-link">
+                <img
+                  src={`${imageTMDB}/w342${sampleImg.poster_path}`}
+                  alt={`${sampleImg.title}의 포스터`}
+                />
+              </Link>
             ) : (
               <div className="loading"></div>
             )
           ) : (
-            <img
-              src={`${imageTMDB}/w342${poster.data.results[0].poster_path}`}
-              alt={`${poster.data.results[0].title}의 포스터`}
-            />
+            <Link
+              to={`/movie/${poster.data.results[0].id}`}
+              className="poster-link"
+            >
+              <img
+                src={`${imageTMDB}/w342${poster.data.results[0].poster_path}`}
+                alt={`${poster.data.results[0].title}의 포스터`}
+              />
+            </Link>
           )}
         </div>
         <div className="informaiton">

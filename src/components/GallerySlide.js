@@ -7,17 +7,17 @@ const GallerySlide = ({ details }) => {
   let setPoster = {
     dots: false,
     infinite: true,
-    speed: 400,
-    slidesToShow: 9,
-    slidesToScroll: 2,
+    speed: 600,
+    slidesToShow:
+      details.images.posters.length < 9 ? details.images.posters.length : 9,
   };
 
   let setBackdrop = {
     dots: false,
     infinite: true,
-    speed: 400,
-    slidesToShow: 5,
-    slidesToScroll: 2,
+    speed: 600,
+    slidesToShow:
+      details.images.backdrops.length < 5 ? details.images.backdrops.length : 5,
   };
 
   return (
