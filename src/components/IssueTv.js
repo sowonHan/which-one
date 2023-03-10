@@ -19,21 +19,25 @@ const IssueTv = ({ issue, loadingIssue }) => {
                 backgroundImage: `url(${imageTMDB}/original${issue.backdrop_path})`,
               }}
             >
-              <Link to={`/tv/${issue.id}`} className="info-link">
-                <div className="info-container">
-                  <div className="poster-container">
+              <div className="info-container">
+                <div className="poster-container">
+                  <Link to={`/tv/${issue.id}`} className="poster-link">
                     <img
                       className="poster"
                       src={`${imageTMDB}/w500${issue.poster_path}`}
                       alt={`${issue.name}의 포스터`}
                     />
-                  </div>
-                  <div className="text-container">
-                    <h1 className="en-name">{issue.name}</h1>
-                    <h6 className="origin-name">{issue.original_name}</h6>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
+                <div className="text-container">
+                  <Link to={`/tv/${issue.id}`} className="text-link">
+                    <h1 className="en-name">{issue.name}</h1>
+                  </Link>
+                  <Link to={`/tv/${issue.id}`} className="text-link">
+                    <h6 className="origin-name">{issue.original_name}</h6>
+                  </Link>
+                </div>
+              </div>
             </div>
           )
         )}

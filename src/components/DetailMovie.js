@@ -6,7 +6,7 @@ import GallerySlide from "./../components/GallerySlide";
 import MovieCard from "./common_page_slide/MovieCard";
 import Similar from "./Similar";
 import Recommendation from "./Recommendation";
-import "../styles/DetailMovie.scss";
+import "../styles/DetailPage.scss";
 
 const DetailMovie = ({ details, loadingDetails }) => {
   const dateKR = useCallback(() => {
@@ -30,7 +30,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
     }
   }, [loadingDetails, details]);
 
-  const rateKR = useCallback(() => {
+  const rate = useCallback(() => {
     if (loadingDetails) {
       return "불러오는 중...";
     } else {
@@ -80,8 +80,8 @@ const DetailMovie = ({ details, loadingDetails }) => {
     <>
       {loadingDetails ? (
         <main>
-          <section className="first-con">
-            <div className="poster load-color"></div>
+          <section className="first-sec">
+            <div className="load-poster"></div>
             <div>
               <p className="big-text">불러오는 중...</p>
             </div>
@@ -117,14 +117,14 @@ const DetailMovie = ({ details, loadingDetails }) => {
           <section>
             <h2>비슷한 작품</h2>
             <div>
-              <div className="similar load-color"></div>
+              <div className="load-similar"></div>
               <p>불러오는 중...</p>
             </div>
           </section>
           <section>
             <h2>추천 작품</h2>
             <div>
-              <div className="recommend load-color"></div>
+              <div className="load-recommend"></div>
               <p>불러오는 중...</p>
             </div>
           </section>
@@ -132,7 +132,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
       ) : (
         details && (
           <main>
-            <section className="first-con">
+            <section className="first-sec">
               <div>
                 <img
                   className="poster"
@@ -167,8 +167,8 @@ const DetailMovie = ({ details, loadingDetails }) => {
                   ))}
                 </p>
                 <p>상영시간 : {details.runtime}분</p>
-                <p>연령등급 : {rateKR()}</p>
-                <p>TMDB 평점 : {details.vote_average}</p>
+                <p>연령등급 : {rate()}</p>
+                <p>TMDB 평점 : {`${details.vote_average} / 10`}</p>
                 <div>
                   <p>시청 가능한 곳</p>
                   <div className="buy">
@@ -233,7 +233,9 @@ const DetailMovie = ({ details, loadingDetails }) => {
               <div>
                 <h6>시놉시스</h6>
                 <p>{details.tagline}</p>
-                <p>{details.overview}</p>
+                <p>
+                  {details.overview === "" ? "정보 없음" : details.overview}
+                </p>
               </div>
               <p>
                 키워드 :{" "}
@@ -272,7 +274,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
             </section>
             <GallerySlide details={details} />
             <section>
-              <h2>이 작품과 비슷한 영화</h2>
+              <h2>이 영화와 비슷한 작품</h2>
               <Similar details={details}>
                 {details.similar.results.map((result) => (
                   <MovieCard
@@ -284,7 +286,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
               </Similar>
             </section>
             <section>
-              <h2>이 작품이 재미있었다면 추천드려요</h2>
+              <h2>이 영화가 재미있었다면 추천드려요</h2>
               <Recommendation details={details}>
                 {details.recommendations.results.map((result) => (
                   <MovieCard
