@@ -188,7 +188,11 @@ const DetailTv = ({ details, loadingDetails }) => {
               {details.created_by.length === 0 ? (
                 <div>
                   <p>정보가 없습니다.</p>
-                  <a href={`https://www.themoviedb.org/tv/${details.id}`}>
+                  <a
+                    href={`https://www.themoviedb.org/tv/${details.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <p>제작진 보러 가기</p>
                   </a>
                 </div>

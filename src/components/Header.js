@@ -12,9 +12,10 @@ const Header = () => {
     <>
       <nav className="nav-web">
         <div>로고이미지</div>
-        <ul className="menu-button">
+        <ul className="menu-list">
           <li>
             <NavLink
+              className="menu-button"
               to="/"
               end
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -24,6 +25,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              className="menu-button"
               to="/movie"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
@@ -32,10 +34,11 @@ const Header = () => {
           </li>
           <li>
             <NavLink
+              className="menu-button"
               to="/tv"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              TV
+              TV 프로그램
             </NavLink>
           </li>
         </ul>

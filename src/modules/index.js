@@ -5,6 +5,7 @@ import TvReducer from "./slideTv";
 import issueReducer from "./issue";
 import movieDetail from "./detailsMovie";
 import tvDetail from "./detailsTv";
+import searchReducer from "./search";
 
 const rootReducer = combineReducers({
   loadingReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   issueReducer,
   movieDetail,
   tvDetail,
+  searchReducer,
 });
 
 export default rootReducer;

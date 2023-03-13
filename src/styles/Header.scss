@@ -2,11 +2,18 @@
   display: flex;
 }
 
-.menu-button {
+.menu-list {
   display: flex;
 
   li {
     margin: 10px;
+  }
+
+  .menu-button {
+    font: {
+      size: 1.1rem;
+      weight: bold;
+    }
   }
 }
 
