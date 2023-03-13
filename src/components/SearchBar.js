@@ -59,33 +59,45 @@ const SearchBar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img
-                      className="item-image"
-                      src={`${imageTMDB}/w45${result.profile_path}`}
-                      alt={`${result.name}의 사진`}
-                    />
+                    {result.profile_path ? (
+                      <img
+                        className="item-image"
+                        src={`${imageTMDB}/w45${result.profile_path}`}
+                        alt={`${result.name}의 사진`}
+                      />
+                    ) : (
+                      <div className="no-image"></div>
+                    )}
                     <p>{result.name}</p>
                   </a>
                 </li>
               ) : result.media_type === "tv" ? (
                 <li key={result.id}>
                   <Link to={`/tv/${result.id}`} className="list-item">
-                    <img
-                      className="item-image"
-                      src={`${imageTMDB}/w92${result.poster_path}`}
-                      alt={`${result.name}의 사진`}
-                    />
+                    {result.poster_path ? (
+                      <img
+                        className="item-image"
+                        src={`${imageTMDB}/w92${result.poster_path}`}
+                        alt={`${result.name}의 사진`}
+                      />
+                    ) : (
+                      <div className="no-image"></div>
+                    )}
                     <p>{result.name}</p>
                   </Link>
                 </li>
               ) : (
                 <li key={result.id}>
                   <Link to={`/movie/${result.id}`} className="list-item">
-                    <img
-                      className="item-image"
-                      src={`${imageTMDB}/w92${result.poster_path}`}
-                      alt={`${result.title}의 사진`}
-                    />
+                    {result.poster_path ? (
+                      <img
+                        className="item-image"
+                        src={`${imageTMDB}/w92${result.poster_path}`}
+                        alt={`${result.title}의 사진`}
+                      />
+                    ) : (
+                      <div className="no-image"></div>
+                    )}
                     <p>{result.title}</p>
                   </Link>
                 </li>
