@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "../styles/Header.scss";
 
 const Header = () => {
@@ -60,9 +60,9 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#!">
+                <Link to="/join">
                   <span>회원가입</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
