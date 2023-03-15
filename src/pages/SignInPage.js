@@ -1,37 +1,56 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  changeInput,
-  register,
-  signIn,
-  signOut,
-  reset,
-} from "../modules/account";
-import { redirect } from "react-router-dom";
+import { changeInput, signIn, reset } from "../modules/account";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignInPage = () => {
-  const { input, accounts, isSignIn, user } = useSelector(
-    ({ accountReducer }) => ({
-      input: accountReducer.input,
-      accounts: accountReducer.accounts,
-      isSignIn: accountReducer.isSignIn,
-      user: accountReducer.user,
-    })
+  const { input, accounts } = useSelector(({ accountReducer }) => ({
+    input: accountReducer.input,
+    accounts: accountReducer.accounts,
+  }));
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onChange = useCallback(
+    (e) => {
+      dispatch(changeInput(e.target));
+    },
+    [dispatch]
+  );
+
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      const confirm = accounts.find(
+        (account) =>
+          account.email === input.email && account.password === input.password
+      );
+      if (confirm) {
+        dispatch(signIn(input));
+        dispatch(reset());
+        return navigate("/");
+      } else {
+        alert("이메일 혹은 비밀번호가 올바르지 않습니다.");
+        return;
+      }
+    },
+    [dispatch, navigate, input, accounts]
   );
 
   return (
     <div>
       <main>
         <h1>로그인</h1>
-        {/* 틀만 대충 만들었고 제대로 하려면 북마크해둔 form 및 정규식 표현 유효성 검사 라이브러리 참고하는 게 좋을 듯... */}
-        <form>
+        <form onSubmit={onSubmit}>
           <div>
-            <label htmlFor="id">Email :</label>
+            <label htmlFor="email">Email :</label>
             <input
               type="email"
               placeholder="sample@gmail.com"
-              id="id"
+              id="email"
               required
+              value={input.email}
+              onChange={onChange}
             />
           </div>
           <div>
@@ -41,10 +60,13 @@ const SignInPage = () => {
               id="password"
               required
               placeholder="숫자와 영문 포함 8글자"
+              value={input.password}
+              onChange={onChange}
             />
           </div>
+          <button>로그인</button>
         </form>
-        <div>회원가입 이동 링크</div>
+        <Link to="/join">처음이신가요? 새 계정 만들러 가기</Link>
       </main>
       <footer>푸터</footer>
     </div>

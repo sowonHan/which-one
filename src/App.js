@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import MovieDetailPage from "./pages/MovieDetailPage";
 import TvDetailPage from "./pages/TvDetailPage";
 import JoinPage from "./pages/JoinPage";
+import SignInPage from "./pages/SignInPage";
+import MyPage from "./pages/MyPage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.scss";
@@ -23,6 +25,8 @@ function App() {
           <Route path="/tv" element={<TvPage />} />
           <Route path="/tv/:id" element={<TvDetailPage />} />
           <Route path="/join" element={<JoinPage />} />
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/my" element={<MyPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

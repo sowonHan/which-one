@@ -9,9 +9,6 @@ const RESET = "account/RESET";
 export const changeInput = (target) => ({
   type: CHANGE_INPUT,
   target,
-  // input: {
-  //   [target.id]: [target.value],
-  // },
 });
 
 export const register = (input) => ({

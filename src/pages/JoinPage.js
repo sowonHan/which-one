@@ -28,7 +28,7 @@ const JoinPage = () => {
         dispatch(register(input));
         alert("회원가입이 완료되었습니다. 환영합니다!");
         dispatch(reset());
-        return navigate("/"); //나중에 sign in 페이지로 수정
+        return navigate("/login");
       } else {
         alert("비밀번호가 서로 일치하지 않습니다.");
         return;
@@ -57,6 +57,7 @@ const JoinPage = () => {
             <label htmlFor="nickname">사용할 이름 :</label>
             <input
               type="text"
+              placeholder="최소 2글자의 문자"
               id="nickname"
               value={nickname}
               onChange={onChange}
