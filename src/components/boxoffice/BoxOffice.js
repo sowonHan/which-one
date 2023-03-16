@@ -114,14 +114,19 @@ const BoxOffice = () => {
     [status]
   );
 
-  const onView = (movieNm) => {
-    setNow({
-      detail: details.find(
-        (detail) => detail.data.movieInfoResult.movieInfo.movieNm === movieNm
-      ),
-      poster: posters.find((poster) => poster.config.params.query === movieNm),
-    });
-  };
+  const onView = useCallback(
+    (movieNm) => {
+      setNow({
+        detail: details.find(
+          (detail) => detail.data.movieInfoResult.movieInfo.movieNm === movieNm
+        ),
+        poster: posters.find(
+          (poster) => poster.config.params.query === movieNm
+        ),
+      });
+    },
+    [details, posters]
+  );
 
   return (
     <section>

@@ -4,7 +4,7 @@ import "../../styles/ListItem.scss";
 
 const ListItem = ({ data, onView }) => {
   return (
-    <tr onMouseOver={() => onView(data.movieNm)}>
+    <tr onMouseOver={() => onView(data.movieNm)} className="item-con">
       <td>{data.rank}</td>
       <td>{data.movieNm}</td>
       <td>{data.audiAcc.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>

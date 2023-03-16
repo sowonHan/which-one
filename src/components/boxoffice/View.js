@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { imageTMDB } from "../../lib/config";
 import { Link } from "react-router-dom";
 import "../../styles/View.scss";
@@ -7,6 +7,19 @@ const View = ({ details, posters, now }) => {
   const sampleImg = posters ? posters[0].data.results[0] : "";
   const sampleInfo = details ? details[0].data.movieInfoResult.movieInfo : "";
   const { detail, poster } = now;
+  const realPoster = useCallback(() => {
+    if (poster) {
+      const real = poster.data.results.find(
+        (result) =>
+          result.title === detail.data.movieInfoResult.movieInfo.movieNm
+      );
+      if (real) {
+        return real;
+      } else {
+        return poster.data.results[0];
+      }
+    }
+  }, [poster, detail]);
 
   return (
     <>
@@ -24,13 +37,10 @@ const View = ({ details, posters, now }) => {
               <div className="loading"></div>
             )
           ) : (
-            <Link
-              to={`/movie/${poster.data.results[0].id}`}
-              className="poster-link"
-            >
+            <Link to={`/movie/${realPoster().id}`} className="poster-link">
               <img
-                src={`${imageTMDB}/w342${poster.data.results[0].poster_path}`}
-                alt={`${poster.data.results[0].title}의 포스터`}
+                src={`${imageTMDB}/w342${realPoster().poster_path}`}
+                alt={`${realPoster().title}의 포스터`}
               />
             </Link>
           )}
