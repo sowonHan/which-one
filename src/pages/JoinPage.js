@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeInput, register, reset } from "../modules/account";
 import { useNavigate } from "react-router-dom";
+import "../styles/JoinPage.scss";
 
 const JoinPage = () => {
   const input = useSelector((state) => state.accountReducer.input);
@@ -49,18 +50,22 @@ const JoinPage = () => {
               placeholder="sample@gmail.com"
               id="email"
               value={email}
-              required
               onChange={onChange}
+              pattern="^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}$"
+              title="sample12@gmail.com"
+              required
             />
           </div>
           <div>
             <label htmlFor="nickname">사용할 이름 :</label>
             <input
               type="text"
-              placeholder="최소 2글자의 문자"
+              placeholder="8글자 이내로 작성해주세요"
               id="nickname"
               value={nickname}
               onChange={onChange}
+              pattern="^.{2,8}$"
+              required
             />
           </div>
           <div>
@@ -68,10 +73,12 @@ const JoinPage = () => {
             <input
               type="password"
               id="password"
-              required
-              placeholder="숫자와 영문 포함 8글자"
+              placeholder="8~12글자의 숫자,영문,특수문자"
               value={password}
               onChange={onChange}
+              pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-])[A-Za-z\d!@#$%^&*-]{8,12}$"
+              title="8~12글자의 숫자,영문,특수문자"
+              required
             />
           </div>
           <div>
@@ -79,10 +86,12 @@ const JoinPage = () => {
             <input
               type="password"
               id="check"
-              required
-              placeholder="숫자와 영문 포함 8글자"
+              placeholder="8~12글자의 숫자,영문,특수문자"
               value={pwConfirm}
               onChange={onPassword}
+              pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-])[A-Za-z\d!@#$%^&*-]{8,12}$"
+              title="8~12글자의 숫자,영문,특수문자"
+              required
             />
           </div>
           <button>등록</button>

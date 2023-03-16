@@ -39,13 +39,13 @@ const initialState = {
   accounts: [
     {
       email: "1234@test.com",
-      nickname: "john",
-      password: "1234abcd",
+      nickname: "철이",
+      password: "1234-abcd",
     },
     {
       email: "5678@test.com",
       nickname: "jane",
-      password: "5678efgh",
+      password: "5678!efgh",
     },
   ],
   isSignIn: false,
@@ -86,7 +86,7 @@ const accountReducer = (state = initialState, action) => {
     case RESET:
       return {
         ...state,
-        input: null,
+        input: initialState.input,
       };
     default:
       return state;
