@@ -88,7 +88,7 @@ const BoxOffice = () => {
       } catch (e) {
         console.log(e);
       }
-    }, 500);
+    }, 100);
     setLoading(false);
   }, [days]);
 

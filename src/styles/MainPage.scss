@@ -1,0 +1,18 @@
+.first-con,
+.second-con,
+.third-con,
+.fourth-con,
+.last-con {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.first-con,
+.last-con {
+  justify-content: center;
+}
+
+.third-con {
+  justify-content: flex-end;
+}
