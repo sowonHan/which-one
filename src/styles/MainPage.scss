@@ -11,8 +11,124 @@
 .first-con,
 .last-con {
   justify-content: center;
+  height: 450px;
+}
+
+.second-con,
+.fourth-con {
+  justify-content: flex-end;
+}
+
+.second-con,
+.third-con,
+.fourth-con {
+  height: 400px;
+}
+
+.first-con {
+  background: {
+    image: linear-gradient(rgba(0, 0, 0, 0.1) 5%, rgba(0, 0, 0, 0.4) 40%),
+      url("../images/main1_unsplash.jpg");
+    size: cover;
+    position: left 30%;
+  }
+}
+
+.second-con {
+  background: {
+    image: linear-gradient(rgba(0, 0, 0, 0.327), rgba(0, 0, 0, 0.3)),
+      linear-gradient(to left, #000 45%, transparent 65%),
+      url("../images/main2_pexels.jpg");
+    position: -20% 40%;
+    size: auto, auto, 65%;
+  }
 }
 
 .third-con {
-  justify-content: flex-end;
+  background: {
+    image: linear-gradient(rgba(0, 0, 0, 0.327), rgba(0, 0, 0, 0.3)),
+      linear-gradient(to right, #000 45%, transparent 65%),
+      url("../images/main3_pexels.jpg");
+    position: 142% 62%;
+    size: auto, auto, 70%;
+  }
+}
+
+.fourth-con {
+  background: {
+    image: linear-gradient(rgba(0, 0, 0, 0.327), rgba(0, 0, 0, 0.3)),
+      linear-gradient(to left, #000 45%, transparent 65%),
+      url("../images/main4_unsplash.jpg");
+    position: -45% 48%;
+    size: auto, auto, 80%;
+  }
+}
+
+.last-con {
+  background: {
+    image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+      url("../images/main5_unsplash.jpg");
+    size: cover;
+    position: right center;
+  }
+}
+
+.first-text,
+.second-text,
+.third-text,
+.fourth-text,
+.last-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 950px;
+  height: 340px;
+  color: white;
+  // padding: 0 100px;
+}
+
+.first-text,
+.last-text {
+  align-items: center;
+
+  h2 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  p {
+    font: {
+      weight: 700;
+      size: 1.2rem;
+    }
+    margin: 0;
+  }
+}
+
+.second-text,
+.third-text,
+.fourth-text {
+  h3 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  p {
+    max-width: 600px;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.second-text,
+.fourth-text {
+  padding-left: 40px;
+}
+
+.third-text {
+  margin-left: 250px;
+}
+
+.fourth-text > p:last-of-type {
+  font-size: 0.9rem;
 }
