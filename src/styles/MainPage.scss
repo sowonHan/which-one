@@ -3,7 +3,7 @@
 .third-con,
 .fourth-con,
 .last-con {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -27,7 +27,7 @@
 
 .first-con {
   background: {
-    image: linear-gradient(rgba(0, 0, 0, 0.1) 5%, rgba(0, 0, 0, 0.4) 40%),
+    image: linear-gradient(145deg, rgba(0, 0, 0, 0.227), rgba(0, 0, 0, 0.5) 30%),
       url("../images/main1_unsplash.jpg");
     size: cover;
     position: left 30%;
@@ -92,16 +92,15 @@
   align-items: center;
 
   h2 {
-    font-size: 2rem;
-    margin: 0;
+    font-size: 2.55rem;
+    margin: 30px 0 23px;
   }
 
   p {
     font: {
-      weight: 700;
-      size: 1.2rem;
+      weight: 500;
+      size: 1.4rem;
     }
-    margin: 0;
   }
 }
 
@@ -109,14 +108,14 @@
 .third-text,
 .fourth-text {
   h3 {
-    font-size: 1.6rem;
-    margin: 0;
+    font-size: 2.1rem;
+    margin-bottom: 15px;
   }
 
   p {
     max-width: 600px;
-    font-size: 1rem;
-    margin: 0;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
   }
 }
 
@@ -126,7 +125,7 @@
 }
 
 .third-text {
-  margin-left: 250px;
+  margin-left: 280px;
 }
 
 .fourth-text > p:last-of-type {

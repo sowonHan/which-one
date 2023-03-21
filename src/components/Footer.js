@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/headerLogo.png";
+import logo from "../images/footerLogo.png";
 import { BiLinkExternal } from "react-icons/bi";
 import "../styles/Footer.scss";
 
@@ -19,8 +19,8 @@ const Footer = () => {
           </div>
           <div>
             <h6>API</h6>
-            <div>The Movie DB</div>
-            <div>영화진흥위원회 Open API</div>
+            <p>The Movie DB</p>
+            <p>영화진흥위원회 Open API</p>
           </div>
           <div>
             <h6>Image Source</h6>

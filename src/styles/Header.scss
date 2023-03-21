@@ -1,22 +1,60 @@
+/* 기본 헤더 */
 .nav-web {
   display: flex;
+  height: 75px;
+  align-items: center;
+  column-gap: 35px;
+  background-color: #1c242c;
+
+  .search-web {
+    margin-left: auto;
+    min-width: 700px;
+    // 사이즈 줄면 최소너비값 조절
+  }
+}
+
+.logo-wrapper {
+  max-width: 150px;
+  margin-left: 25px;
+
+  img {
+    max-width: 150px;
+    display: block;
+  }
 }
 
 .menu-list {
   display: flex;
+  column-gap: 30px;
 
   li {
-    margin: 10px;
+    color: white;
+
+    &:hover {
+      color: yellow;
+    }
   }
 
   .menu-button {
     font: {
       size: 1.1rem;
-      weight: bold;
     }
   }
 }
 
+/* 모바일용 헤더 */
 .nav-mobile {
   display: none;
+  height: 120px;
+  background-color: #1c242c;
+}
+
+.top-con {
+  display: flex;
+  align-items: center;
+  column-gap: 35px;
+}
+
+.account-mobile {
+  margin-left: auto;
 }

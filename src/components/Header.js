@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import Account from "./Account";
 import { NavLink } from "react-router-dom";
+import logo from "../images/headerLogo.png";
 import "../styles/Header.scss";
 
 const Header = () => {
@@ -12,7 +13,9 @@ const Header = () => {
   return (
     <>
       <nav className="nav-web">
-        <div>로고이미지</div>
+        <div className="logo-wrapper">
+          <img src={logo} alt="사이트 로고" />
+        </div>
         <ul className="menu-list">
           <li>
             <NavLink
@@ -43,19 +46,24 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <SearchBar />
+        <div className="search-web">
+          <SearchBar />
+        </div>
         <Account />
       </nav>
 
       <nav className="nav-mobile">
         <div className="top-con">
-          <div>로고이미지</div>
-          <ul>
+          <div className="logo-wrapper">
+            <img src={logo} alt="사이트 로고" />
+          </div>
+          <ul className="menu-list">
             <li>
               <NavLink
                 to="/"
                 end
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="menu-button"
               >
                 홈
               </NavLink>
@@ -64,6 +72,7 @@ const Header = () => {
               <NavLink
                 to="/movie"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="menu-button"
               >
                 영화
               </NavLink>
@@ -72,12 +81,15 @@ const Header = () => {
               <NavLink
                 to="/tv"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="menu-button"
               >
-                TV
+                TV 프로그램
               </NavLink>
             </li>
           </ul>
-          <Account />
+          <div className="account-mobile">
+            <Account />
+          </div>
         </div>
         <div className="bottom-con">
           <SearchBar />

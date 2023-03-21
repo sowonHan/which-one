@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "../modules/account";
 import { Link } from "react-router-dom";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { VscAccount } from "react-icons/vsc";
 import "../styles/Account.scss";
 
 const Account = () => {
@@ -28,7 +29,7 @@ const Account = () => {
               className="account-icon"
               onClick={() => setDropdown(!dropdown)}
             >
-              아이콘 {dropdown ? <FaAngleUp /> : <FaAngleDown />}
+              <VscAccount /> {dropdown ? <FaAngleUp /> : <FaAngleDown />}
             </div>
             {dropdown && (
               <div className="overflow">
@@ -51,7 +52,7 @@ const Account = () => {
       ) : (
         <div className="dropdown">
           <div className="account-icon" onClick={() => setDropdown(!dropdown)}>
-            아이콘 {dropdown ? <FaAngleUp /> : <FaAngleDown />}
+            <VscAccount /> {dropdown ? <FaAngleUp /> : <FaAngleDown />}
           </div>
           {dropdown && (
             <div className="overflow">
