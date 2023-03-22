@@ -56,7 +56,10 @@ const View = ({ details, posters, now }) => {
                     : sampleInfo.movieNmOg}
                 </p>
                 <hr />
-                <p>{sampleInfo.openDt}</p>
+                <p>{`${sampleInfo.openDt.slice(0, 4)}-${sampleInfo.openDt.slice(
+                  4,
+                  6
+                )}-${sampleInfo.openDt.slice(-2)}`}</p>
                 <p>{sampleInfo.nations[0].nationNm}</p>
                 <p>{sampleInfo.audits[0].watchGradeNm}</p>
                 <p>
@@ -89,7 +92,7 @@ const View = ({ details, posters, now }) => {
             ) : (
               <div>
                 <h4>영화명</h4>
-                <p>원제목(한국영화일시 영문 출력)</p>
+                <p>원제목</p>
                 <hr />
                 <p>개봉일</p>
                 <p>제작국가</p>
@@ -110,7 +113,13 @@ const View = ({ details, posters, now }) => {
                   : detail.data.movieInfoResult.movieInfo.movieNmOg}
               </p>
               <hr />
-              <p>{detail.data.movieInfoResult.movieInfo.openDt}</p>
+              <p>{`${detail.data.movieInfoResult.movieInfo.openDt.slice(
+                0,
+                4
+              )}-${detail.data.movieInfoResult.movieInfo.openDt.slice(
+                4,
+                6
+              )}-${detail.data.movieInfoResult.movieInfo.openDt.slice(-2)}`}</p>
               <p>{detail.data.movieInfoResult.movieInfo.nations[0].nationNm}</p>
               <p>
                 {detail.data.movieInfoResult.movieInfo.audits[0].watchGradeNm}

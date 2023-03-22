@@ -1,5 +1,11 @@
 .item-con {
   height: 35px;
+  border-bottom: 1px solid lightgray;
+  text-align: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
 }
 
 .up {

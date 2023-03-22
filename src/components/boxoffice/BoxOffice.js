@@ -131,41 +131,69 @@ const BoxOffice = () => {
   return (
     <section>
       {loading ? (
-        <div className="container">
+        <div className="boxoffice-container">
+          <h1 className="container-name">박스오피스</h1>
           <div className="nav-container">
             <div></div>
-            <button>일별</button>
-            <button>주간</button>
+            <div className="button-wrapper">
+              <button className="nav-button">일별</button>
+              <button className="nav-button">주간</button>
+            </div>
           </div>
           <div className="page-container">
             <View />
             <List>
-              <tr>
+              <tr className="no-data">
                 <td>불러오는 중...</td>
               </tr>
             </List>
           </div>
         </div>
       ) : (
-        <div className="container">
+        <div className="boxoffice-container">
+          <h1 className="container-name">박스오피스</h1>
           <div className="nav-container">
-            <h5>
+            <h5 className="date-range">
               {loading
                 ? ""
                 : days
                 ? status === "day"
-                  ? days.showRange
-                  : weeks.showRange
+                  ? `${days.showRange.slice(0, 4)}.${days.showRange.slice(
+                      4,
+                      6
+                    )}.${days.showRange.slice(6, 8)}  ${days.showRange.slice(
+                      8,
+                      9
+                    )}  ${days.showRange.slice(9, 13)}.${days.showRange.slice(
+                      13,
+                      15
+                    )}.${days.showRange.slice(-2)}`
+                  : `${weeks.showRange.slice(0, 4)}.${weeks.showRange.slice(
+                      4,
+                      6
+                    )}.${weeks.showRange.slice(6, 8)}  ${weeks.showRange.slice(
+                      8,
+                      9
+                    )}  ${weeks.showRange.slice(9, 13)}.${weeks.showRange.slice(
+                      13,
+                      15
+                    )}.${weeks.showRange.slice(-2)}`
                 : ""}
             </h5>
-            <button onClick={(e) => onDay("day", e)}>일별</button>
-            <button onClick={(e) => onWeek("week", e)}>주간</button>
+            <div className="button-wrapper">
+              <button className="nav-button" onClick={(e) => onDay("day", e)}>
+                일별
+              </button>
+              <button className="nav-button" onClick={(e) => onWeek("week", e)}>
+                주간
+              </button>
+            </div>
           </div>
           <div className="page-container">
             <View details={details} posters={posters} now={now} />
             <List onView={onView}>
               {loading ? (
-                <tr>
+                <tr className="no-data">
                   <td>불러오는 중...</td>
                 </tr>
               ) : days ? (
@@ -179,7 +207,7 @@ const BoxOffice = () => {
                   ))
                 )
               ) : (
-                <tr>
+                <tr className="no-data">
                   <td>데이터를 불러올 수 없습니다.</td>
                 </tr>
               )}

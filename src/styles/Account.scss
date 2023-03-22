@@ -1,5 +1,11 @@
 .sign-in {
   display: flex;
+
+  .user-name {
+    color: white;
+    line-height: 32px;
+    margin-right: 10px;
+  }
 }
 
 .dropdown {
@@ -40,9 +46,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.member {
+  row-gap: 15px;
+}
+
+.not-member {
   row-gap: 5px;
 }
 
-.signout {
+.sign-out {
   cursor: pointer;
+}
+
+.dropdown-text,
+.sign-out {
+  font-size: 1.01rem;
 }

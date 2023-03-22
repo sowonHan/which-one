@@ -23,7 +23,7 @@ const Account = () => {
     <>
       {isSignIn ? (
         <div className="sign-in">
-          <p>{user.nickname}님</p>
+          <p className="user-name">{`반갑습니다, ${user.nickname} 님`}</p>
           <div className="dropdown">
             <div
               className="account-icon"
@@ -33,14 +33,14 @@ const Account = () => {
             </div>
             {dropdown && (
               <div className="overflow">
-                <ul className="hide-menu">
+                <ul className="hide-menu member">
                   <li>
                     <Link to="/my">
-                      <span>마이페이지</span>
+                      <span className="dropdown-text">마이페이지</span>
                     </Link>
                   </li>
                   <li>
-                    <span className="signout" onClick={onSignOut}>
+                    <span className="sign-out" onClick={onSignOut}>
                       로그아웃
                     </span>
                   </li>
@@ -56,20 +56,20 @@ const Account = () => {
           </div>
           {dropdown && (
             <div className="overflow">
-              <ul className="hide-menu">
+              <ul className="hide-menu not-member">
                 <li>
                   <Link to="/login">
-                    <span>로그인</span>
+                    <span className="dropdown-text">로그인</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/my">
-                    <span>마이페이지</span>
+                    <span className="dropdown-text">마이페이지</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/join">
-                    <span>회원가입</span>
+                    <span className="dropdown-text">회원가입</span>
                   </Link>
                 </li>
               </ul>

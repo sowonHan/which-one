@@ -1,7 +1,19 @@
-.container {
-  margin: 0 auto;
+.boxoffice-container {
+  margin: 30px auto;
   width: 1500px;
-  height: 700px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  .container-name {
+    text-align: center;
+    letter-spacing: 0.6rem;
+    font: {
+      weight: 900;
+      size: 2.4rem;
+    }
+  }
 }
 
 .nav-container,
@@ -10,7 +22,37 @@
 }
 
 .page-container {
-  margin-top: 40px;
   justify-content: space-around;
   align-items: center;
+
+  .no-data {
+    text-align: center;
+  }
+}
+
+.nav-container {
+  justify-content: flex-end;
+  align-items: center;
+
+  .date-range {
+    font-size: 1.5rem;
+  }
+}
+
+.button-wrapper {
+  margin: 0 200px 0 300px;
+  display: flex;
+  column-gap: 13px;
+
+  .nav-button {
+    border: 0;
+    border-radius: 14px;
+    width: 55px;
+    text-align: center;
+    background-color: lightgray;
+
+    &:hover {
+      background-color: gray;
+    }
+  }
 }
