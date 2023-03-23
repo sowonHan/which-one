@@ -4,20 +4,24 @@
   text-align: center;
 
   &:hover {
-    background-color: lightgray;
+    background-color: #b7bdc5;
+  }
+
+  .new {
+    color: orange;
+    font-style: italic;
   }
 }
 
 .up {
-  color: red;
+  color: #e12020;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .down {
-  color: green;
+  color: steelblue;
   margin: 0;
-}
-
-.up-icon {
-  color: red;
 }

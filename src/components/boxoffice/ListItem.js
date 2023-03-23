@@ -1,5 +1,5 @@
 import React from "react";
-import { FcMinus, FcUp, FcDown } from "react-icons/fc";
+import { TiArrowUpThick, TiArrowDownThick, TiMinus } from "react-icons/ti";
 import "../../styles/ListItem.scss";
 
 const ListItem = ({ data, onView }) => {
@@ -11,17 +11,17 @@ const ListItem = ({ data, onView }) => {
       <td>{data.showCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
       <td>
         {data.rankOldAndNew === "NEW" ? (
-          <span>{data.rankOldAndNew}</span>
+          <span className="new">{data.rankOldAndNew}</span>
         ) : data.rankInten === "0" ? (
-          <FcMinus />
+          <TiMinus />
         ) : Number(data.rankInten) > 0 ? (
           <p className="up">
-            <FcUp className="up-icon" />
+            <TiArrowUpThick className="up-icon" />
             <span>{Number(data.rankInten)}</span>
           </p>
         ) : (
           <p className="down">
-            <FcDown />
+            <TiArrowDownThick />
             <span>{Math.abs(Number(data.rankInten))}</span>
           </p>
         )}
