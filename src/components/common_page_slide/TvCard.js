@@ -6,7 +6,7 @@ import "../../styles/Card.scss";
 const TvCard = ({ result, linkUrl }) => {
   return (
     <>
-      <Link to={linkUrl} className="link">
+      <Link to={linkUrl}>
         <div>
           {result.poster_path ? (
             <img
@@ -19,7 +19,7 @@ const TvCard = ({ result, linkUrl }) => {
           )}
         </div>
         <div>
-          <h6>{result.name}</h6>
+          <h6 className="card-text">{result.name}</h6>
         </div>
       </Link>
     </>

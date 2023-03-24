@@ -1,13 +1,24 @@
-.slick-prev:before {
+.slick-prev::before,
+.slick-next::before {
   color: black;
-}
-
-.slick-next:before {
-  color: black;
+  font-size: 3.5rem;
 }
 
 Link,
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.slick-prev,
+.slick-next {
+  top: 42%;
+}
+
+.slick-prev {
+  left: -65px;
+}
+
+.slick-next {
+  right: -5px;
 }

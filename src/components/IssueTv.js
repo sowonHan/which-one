@@ -30,10 +30,10 @@ const IssueTv = ({ issue, loadingIssue }) => {
                   </Link>
                 </div>
                 <div className="text-container">
-                  <Link to={`/tv/${issue.id}`} className="text-link">
-                    <h1 className="en-name">{issue.name}</h1>
+                  <Link to={`/tv/${issue.id}`}>
+                    <h1 className="name">{issue.name}</h1>
                   </Link>
-                  <Link to={`/tv/${issue.id}`} className="text-link">
+                  <Link to={`/tv/${issue.id}`}>
                     <h6 className="origin-name">{issue.original_name}</h6>
                   </Link>
                 </div>

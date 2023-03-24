@@ -1,5 +1,5 @@
 .all-container {
-  width: 100vw;
+  width: 100%;
   height: 700px;
 }
 
@@ -51,15 +51,22 @@
 }
 
 .text-container {
-  min-width: 300px;
-
-  .text-link {
-    width: 200px;
-    height: 100px;
-  }
+  width: 300px;
+  margin-top: 20px;
 
   .origin-name,
-  .en-name {
+  .name {
     color: whitesmoke;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .name {
+    margin-bottom: 6px;
+  }
+
+  .origin-name {
+    font-size: 1rem;
   }
 }
