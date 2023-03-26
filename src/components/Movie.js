@@ -15,7 +15,7 @@ const Movie = ({
   loadingUpcoming,
 }) => {
   return (
-    <>
+    <main>
       <section className="slide-con-first">
         <h1>요즘 트렌드</h1>
         {loadingTrend ? (
@@ -88,7 +88,7 @@ const Movie = ({
           )
         )}
       </section>
-    </>
+    </main>
   );
 };
 

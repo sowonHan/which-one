@@ -3,12 +3,16 @@
   align-items: center;
 
   .logo-con {
-    margin-left: 20px;
+    margin-left: 15px;
 
     .logo {
       width: 45px;
       height: 45px;
       object-fit: contain;
     }
+  }
+
+  p {
+    white-space: pre-wrap;
   }
 }

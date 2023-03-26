@@ -6,7 +6,7 @@ const Streaming = ({ details }) => {
   return (
     <>
       <div className="flatrate">
-        <p>스트리밍 : </p>
+        <p>스트리밍{"  "}:</p>
         {details["watch/providers"].results.hasOwnProperty("KR") ? (
           details["watch/providers"].results.KR.flatrate ? (
             details["watch/providers"].results.KR.flatrate.map((provider) => (
@@ -20,10 +20,10 @@ const Streaming = ({ details }) => {
               </div>
             ))
           ) : (
-            <p> 없음</p>
+            <p>{"  "}없음</p>
           )
         ) : (
-          <p> 없음</p>
+          <p>{"  "}없음</p>
         )}
       </div>
     </>

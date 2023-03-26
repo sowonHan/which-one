@@ -7,7 +7,7 @@ const MainPage = () => {
     <>
       <section className="first-con">
         <div className="first-text">
-          <h2>환영합니다! 어떤 작품을 보여드릴까요?</h2>
+          <h2>어서 오세요! 어떤 작품을 보여드릴까요?</h2>
           <p>Which One Demand On (WODO) 을 소개합니다.</p>
         </div>
       </section>

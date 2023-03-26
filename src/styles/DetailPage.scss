@@ -1,7 +1,19 @@
-.first-sec {
+.detail-container {
+  width: 90%;
+  margin: 0 auto;
+
+  hr {
+    background-color: lightgray;
+    margin: 0 5px;
+  }
+}
+
+.general-sec {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  height: 600px;
+  margin: 30px 0 20px;
 
   .load-poster {
     width: 300px;
@@ -11,8 +23,6 @@
 
   .poster {
     width: 300px;
-    // height: 420px;
-    // object-fit: contain;
     height: auto;
   }
 
@@ -21,10 +31,32 @@
   }
 }
 
+.general-text {
+  margin-left: 150px;
+
+  p {
+    white-space: pre-wrap;
+  }
+
+  .name {
+    font-size: 2.4rem;
+  }
+
+  .origin-name {
+    margin-bottom: 12px;
+  }
+}
+
+.korea-date {
+  margin-left: 5px;
+}
+
 .load-credit {
   width: 150px;
   height: 225px;
   background-color: gray;
+  text-align: center;
+  line-height: 225px;
 }
 
 .load-gallery {
@@ -39,12 +71,42 @@
   }
 }
 
+.provider {
+  margin-top: 5px;
+
+  h6 {
+    font: {
+      weight: 700;
+      size: 1rem;
+    }
+  }
+}
+
 .buy,
 .rent {
   display: flex;
+  align-items: center;
+  margin: 5px 0;
 
   .logo-con {
-    margin-left: 20px;
+    margin-left: 15px;
+  }
+}
+
+.synopsis-sec {
+  margin: 25px 0;
+
+  h6 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .tagline {
+    margin-bottom: 7px;
+  }
+
+  .keyword {
+    margin-top: 20px;
   }
 }
 

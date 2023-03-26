@@ -49,16 +49,18 @@ const DetailTv = ({ details, loadingDetails }) => {
   return (
     <>
       {loadingDetails ? (
-        <main>
+        <main className="detail-container">
           <section className="first-sec">
             <div className="poster load-color"></div>
             <div>
               <h1 className="big-text">불러오는 중...</h1>
             </div>
           </section>
+          <hr />
           <section>
             <p>불러오는 중...</p>
           </section>
+          <hr />
           <section>
             <div>
               <h6>출연진</h6>
@@ -71,6 +73,7 @@ const DetailTv = ({ details, loadingDetails }) => {
             <div className="load-credit"></div>
             <p>불러오는 중...</p>
           </section>
+          <hr />
           <section>
             <h2>영화 이미지</h2>
             <div className="load-gallery">
@@ -84,6 +87,7 @@ const DetailTv = ({ details, loadingDetails }) => {
               <div className="sample"></div>
             </div>
           </section>
+          <hr />
           <section>
             <h2>비슷한 작품</h2>
             <div>
@@ -101,8 +105,8 @@ const DetailTv = ({ details, loadingDetails }) => {
         </main>
       ) : (
         details && (
-          <main>
-            <section className="first-sec">
+          <main className="detail-container">
+            <section className="general-sec">
               <div>
                 <img
                   className="poster"
@@ -110,13 +114,18 @@ const DetailTv = ({ details, loadingDetails }) => {
                   alt={`${details.name}의 포스터`}
                 />
               </div>
-              <div>
-                <h2>{details.name}</h2>
-                <p>{`(${details.original_name})`}</p>
-                <p>개봉/제작 상태 : {details.status}</p>
-                <p>연령등급 : {rate()}</p>
+              <div className="general-text">
+                <h2 className="name">{details.name}</h2>
+                <p className="origin-name">{`(${details.original_name})`}</p>
                 <p>
-                  제작 국가 :{" "}
+                  개봉/제작 상태{"  "}:{`  ${details.status}`}
+                </p>
+                <p>
+                  연령등급{"  "}:{"  "}
+                  {rate()}
+                </p>
+                <p>
+                  제작 국가{"  "}:{"  "}
                   {details.production_countries.map((country, idx) => (
                     <span key={idx}>
                       {country.name}
@@ -125,7 +134,7 @@ const DetailTv = ({ details, loadingDetails }) => {
                   ))}
                 </p>
                 <p>
-                  방송 채널 :{" "}
+                  방송 채널{"  "}:{"  "}
                   {details.networks.map((network) => (
                     <span key={network.id}>
                       {network.name}
@@ -134,7 +143,7 @@ const DetailTv = ({ details, loadingDetails }) => {
                   ))}
                 </p>
                 <p>
-                  장르 :{" "}
+                  장르{"  "}:{"  "}
                   {details.genres.map((genre) => (
                     <span key={genre.id}>
                       {genre.name}
@@ -142,37 +151,48 @@ const DetailTv = ({ details, loadingDetails }) => {
                     </span>
                   ))}
                 </p>
-                <p>총 시즌수 : {details.number_of_seasons}시즌</p>
-                <p>총 에피소드수 : {details.number_of_episodes}화</p>
                 <p>
-                  에피소드별 상영 시간 :{" "}
+                  총 시즌수{"  "}:{`  ${details.number_of_seasons}시즌`}
+                </p>
+                <p>
+                  총 에피소드수{"  "}:{`  ${details.number_of_episodes}화`}
+                </p>
+                <p>
+                  에피소드별 상영 시간{"  "}:{"  "}
                   {details.episode_run_time.length === 0
                     ? "일정하지 않음"
                     : `${details.episode_run_time}분`}
                 </p>
-                <p>첫 방영일 : {details.first_air_date}</p>
-                <p>마지막 방영일 : {details.last_air_date}</p>
                 <p>
-                  다음 에피소드 방영일 :{" "}
+                  첫 방영일{"  "}:{`  ${details.first_air_date}`}
+                </p>
+                <p>
+                  마지막 방영일{"  "}:{`  ${details.last_air_date}`}
+                </p>
+                <p>
+                  다음 에피소드 방영일{"  "}:{"  "}
                   {details.next_episode_to_air
                     ? details.next_episode_to_air.air_date
                     : "미정"}
                 </p>
-                <p>TMDB 평점 : {`${details.vote_average} / 10`}</p>
-                <div>
-                  <p>시청 가능한 곳</p>
-                  <Streaming details={details} />
-                </div>
                 <p>
-                  홈페이지 :{" "}
+                  TMDB 평점{"  "}:{`  ${details.vote_average} / 10`}
+                </p>
+                <p>
+                  홈페이지{"  "}:{"  "}
                   {details.homepage === "" ? "없음" : details.homepage}
                 </p>
+                <div className="provider">
+                  <h6>시청 가능한 곳</h6>
+                  <Streaming details={details} />
+                </div>
               </div>
             </section>
-            <section>
+            <hr />
+            <section className="synopsis-sec">
               <h6>시놉시스</h6>
               <p>{details.overview === "" ? "정보 없음" : details.overview}</p>
-              <p>
+              <p className="keyword">
                 키워드 :{" "}
                 {details.keywords.results.map((result) => (
                   <span key={result.id}>
@@ -182,6 +202,7 @@ const DetailTv = ({ details, loadingDetails }) => {
                 ))}
               </p>
             </section>
+            <hr />
             <Cast details={details} />
             <section>
               <h6>대표 제작자</h6>
@@ -215,7 +236,9 @@ const DetailTv = ({ details, loadingDetails }) => {
                 </Slider>
               )}
             </section>
+            <hr />
             <GallerySlide details={details} />
+            <hr />
             <section>
               <h2>이 TV 프로그램과 비슷한 작품</h2>
               <Similar details={details}>

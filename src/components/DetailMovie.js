@@ -79,16 +79,18 @@ const DetailMovie = ({ details, loadingDetails }) => {
   return (
     <>
       {loadingDetails ? (
-        <main>
+        <main className="detail-container">
           <section className="first-sec">
             <div className="load-poster"></div>
             <div>
               <p className="big-text">불러오는 중...</p>
             </div>
           </section>
+          <hr />
           <section>
             <p>불러오는 중...</p>
           </section>
+          <hr />
           <section>
             <div>
               <h6>출연진</h6>
@@ -101,6 +103,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
             <div className="load-credit"></div>
             <p>불러오는 중...</p>
           </section>
+          <hr />
           <section>
             <h2>영화 이미지</h2>
             <div className="load-gallery">
@@ -114,6 +117,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
               <div className="sample"></div>
             </div>
           </section>
+          <hr />
           <section>
             <h2>비슷한 작품</h2>
             <div>
@@ -131,8 +135,8 @@ const DetailMovie = ({ details, loadingDetails }) => {
         </main>
       ) : (
         details && (
-          <main>
-            <section className="first-sec">
+          <main className="detail-container">
+            <section className="general-sec">
               <div>
                 <img
                   className="poster"
@@ -140,16 +144,18 @@ const DetailMovie = ({ details, loadingDetails }) => {
                   alt={`${details.title}의 포스터`}
                 />
               </div>
-              <div>
-                <h2 className="title">{details.title}</h2>
-                <p>{`(${details.original_title})`}</p>
+              <div className="general-text">
+                <h2 className="name">{details.title}</h2>
+                <p className="origin-name">{`(${details.original_title})`}</p>
                 <p>
-                  개봉/공개일 : {details.release_date}
-                  <span>{`(한국 : ${dateKR()})`}</span>
+                  개봉/공개일{"  "}:{`  ${details.release_date}`}
+                  <span className="korea-date">{`( 한국 :  ${dateKR()} )`}</span>
                 </p>
-                <p>개봉/제작 상태 : {details.status}</p>
                 <p>
-                  제작 국가 :{" "}
+                  개봉/제작 상태{"  "}:{`  ${details.status}`}
+                </p>
+                <p>
+                  제작 국가{"  "}:{"  "}
                   {details.production_countries.map((country, idx) => (
                     <span key={idx}>
                       {country.name}
@@ -158,7 +164,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
                   ))}
                 </p>
                 <p>
-                  장르 :{" "}
+                  장르{"  "}:{"  "}
                   {details.genres.map((genre) => (
                     <span key={genre.id}>
                       {genre.name}
@@ -166,13 +172,24 @@ const DetailMovie = ({ details, loadingDetails }) => {
                     </span>
                   ))}
                 </p>
-                <p>상영시간 : {details.runtime}분</p>
-                <p>연령등급 : {rate()}</p>
-                <p>TMDB 평점 : {`${details.vote_average} / 10`}</p>
-                <div>
-                  <p>시청 가능한 곳</p>
+                <p>
+                  상영시간{"  "}:{`  ${details.runtime}분`}
+                </p>
+                <p>
+                  연령등급{"  "}:{"  "}
+                  {rate()}
+                </p>
+                <p>
+                  TMDB 평점{"  "}:{`  ${details.vote_average} / 10`}
+                </p>
+                <p>
+                  홈페이지{"  "}:{"  "}
+                  {details.homepage === "" ? "없음" : details.homepage}
+                </p>
+                <div className="provider">
+                  <h6>시청 가능한 곳</h6>
                   <div className="buy">
-                    <p>구매 : </p>
+                    <p>구매{"  "}:</p>
                     {details["watch/providers"].results.hasOwnProperty("KR") ? (
                       details["watch/providers"].results.KR.buy ? (
                         details["watch/providers"].results.KR.buy.map(
@@ -190,14 +207,14 @@ const DetailMovie = ({ details, loadingDetails }) => {
                           )
                         )
                       ) : (
-                        <p>없음</p>
+                        <p>{"  "}없음</p>
                       )
                     ) : (
-                      <p>없음</p>
+                      <p>{"  "}없음</p>
                     )}
                   </div>
                   <div className="rent">
-                    <p>대여 : </p>
+                    <p>대여{"  "}:</p>
                     {details["watch/providers"].results.hasOwnProperty("KR") ? (
                       details["watch/providers"].results.KR.rent ? (
                         details["watch/providers"].results.KR.rent.map(
@@ -215,29 +232,26 @@ const DetailMovie = ({ details, loadingDetails }) => {
                           )
                         )
                       ) : (
-                        <p> 없음</p>
+                        <p>{"  "}없음</p>
                       )
                     ) : (
-                      <p> 없음</p>
+                      <p>{"  "}없음</p>
                     )}
                   </div>
                   <Streaming details={details} />
                 </div>
-                <p>
-                  홈페이지 :{" "}
-                  {details.homepage === "" ? "없음" : details.homepage}
-                </p>
               </div>
             </section>
-            <section>
+            <hr />
+            <section className="synopsis-sec">
               <div>
                 <h6>시놉시스</h6>
-                <p>{details.tagline}</p>
+                <p className="tagline">{details.tagline}</p>
                 <p>
                   {details.overview === "" ? "정보 없음" : details.overview}
                 </p>
               </div>
-              <p>
+              <p className="keyword">
                 키워드 :{" "}
                 {details.keywords.keywords.map((keyword) => (
                   <span key={keyword.id}>
@@ -247,6 +261,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
                 ))}
               </p>
             </section>
+            <hr />
             <Cast details={details} />
             <section>
               <h6>감독</h6>
@@ -272,7 +287,9 @@ const DetailMovie = ({ details, loadingDetails }) => {
                 }
               </p>
             </section>
+            <hr />
             <GallerySlide details={details} />
+            <hr />
             <section>
               <h2>이 영화와 비슷한 작품</h2>
               <Similar details={details}>
