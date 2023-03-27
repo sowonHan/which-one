@@ -1,6 +1,24 @@
+.cast-sec {
+  margin: 20px 0 15px;
+  width: 60%;
+
+  h6 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+}
+
 .slide-cast {
-  width: 1000px;
-  margin-left: 100px;
+  width: 85%;
+  margin-left: 60px;
+
+  p {
+    width: 150px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
 
 .cast {
@@ -14,4 +32,6 @@
   width: 150px;
   height: 200px;
   background-color: #b4b4b4;
+  text-align: center;
+  line-height: 200px;
 }

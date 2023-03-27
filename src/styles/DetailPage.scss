@@ -43,32 +43,12 @@
   }
 
   .origin-name {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 }
 
 .korea-date {
   margin-left: 5px;
-}
-
-.load-credit {
-  width: 150px;
-  height: 225px;
-  background-color: gray;
-  text-align: center;
-  line-height: 225px;
-}
-
-.load-gallery {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  .sample {
-    width: 300px;
-    height: 200px;
-    background-color: gray;
-  }
 }
 
 .provider {
@@ -97,7 +77,7 @@
   margin: 25px 0;
 
   h6 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     margin-bottom: 15px;
   }
 
@@ -110,23 +90,60 @@
   }
 }
 
+.crew-sec {
+  margin-bottom: 25px;
+
+  h6 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .crew-img {
+    display: block;
+    width: 150px;
+    height: 225px;
+    object-fit: contain;
+  }
+
+  .crew-name {
+    width: 150px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
 .slide-creator {
   width: 170px;
   margin-left: 100px;
   padding: 0 10px;
+
+  .creator-con {
+    width: 150px;
+    height: 300px;
+    margin: 0 auto;
+  }
 }
 
-.director-con {
-  width: 150px;
-  height: 300px;
-  margin: 0 auto;
-}
-
-.director-img {
-  display: block;
+.load-credit {
   width: 150px;
   height: 225px;
-  object-fit: contain;
+  background-color: gray;
+  text-align: center;
+  line-height: 225px;
+}
+
+.load-gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .sample {
+    width: 300px;
+    height: 200px;
+    background-color: gray;
+  }
 }
 
 .load-similar,

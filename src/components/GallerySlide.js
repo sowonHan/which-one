@@ -22,7 +22,7 @@ const GallerySlide = ({ details }) => {
 
   return (
     <>
-      <section>
+      <section className="gallery-sec">
         <h2>갤러리</h2>
         <div className="poster-con">
           <h6>포스터</h6>

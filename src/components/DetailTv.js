@@ -204,7 +204,7 @@ const DetailTv = ({ details, loadingDetails }) => {
             </section>
             <hr />
             <Cast details={details} />
-            <section>
+            <section className="crew-sec">
               <h6>대표 제작자</h6>
               {details.created_by.length === 0 ? (
                 <div>
@@ -220,17 +220,17 @@ const DetailTv = ({ details, loadingDetails }) => {
               ) : (
                 <Slider className="slide-creator" {...settings}>
                   {details.created_by.map((creator) => (
-                    <div key={creator.id} className="director-con">
+                    <div key={creator.id} className="creator-con">
                       {creator.profile_path ? (
                         <img
-                          className="director-img"
+                          className="crew-img"
                           src={`${imageTMDB}/w185${creator.profile_path}`}
                           alt={`${creator.name}의 사진`}
                         />
                       ) : (
                         <div className="load-credit">No Image</div>
                       )}
-                      <p>{creator.name}</p>
+                      <p className="crew-name">{creator.name}</p>
                     </div>
                   ))}
                 </Slider>

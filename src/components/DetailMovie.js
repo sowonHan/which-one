@@ -263,12 +263,12 @@ const DetailMovie = ({ details, loadingDetails }) => {
             </section>
             <hr />
             <Cast details={details} />
-            <section>
+            <section className="crew-sec">
               <h6>감독</h6>
               {details.credits.crew.find((person) => person.job === "Director")
                 .profile_path ? (
                 <img
-                  className="director-img"
+                  className="crew-img"
                   src={`${imageTMDB}/w185${
                     details.credits.crew.find(
                       (person) => person.job === "Director"
@@ -279,7 +279,7 @@ const DetailMovie = ({ details, loadingDetails }) => {
               ) : (
                 <div className="load-credit">No Image</div>
               )}
-              <p>
+              <p className="crew-name">
                 {
                   details.credits.crew.find(
                     (person) => person.job === "Director"

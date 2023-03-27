@@ -13,7 +13,7 @@ const Cast = ({ details }) => {
 
   return (
     <>
-      <section>
+      <section className="cast-sec">
         <h6>출연진</h6>
         <Slider {...settings} className="slide-cast">
           {details.credits.cast.slice(0, 11).map((actor) => (
