@@ -207,20 +207,20 @@ const DetailTv = ({ details, loadingDetails }) => {
             <section className="crew-sec">
               <h6>대표 제작자</h6>
               {details.created_by.length === 0 ? (
-                <div>
+                <div className="no-creator">
                   <p>정보가 없습니다.</p>
                   <a
                     href={`https://www.themoviedb.org/tv/${details.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <p>제작진 보러 가기</p>
+                    제작진 보러 가기
                   </a>
                 </div>
               ) : (
                 <Slider className="slide-creator" {...settings}>
                   {details.created_by.map((creator) => (
-                    <div key={creator.id} className="creator-con">
+                    <div key={creator.id}>
                       {creator.profile_path ? (
                         <img
                           className="crew-img"
@@ -239,29 +239,41 @@ const DetailTv = ({ details, loadingDetails }) => {
             <hr />
             <GallerySlide details={details} />
             <hr />
-            <section>
+            <section className="similar-sec">
               <h2>이 TV 프로그램과 비슷한 작품</h2>
-              <Similar details={details}>
-                {details.similar.results.map((result) => (
-                  <TvCard
-                    key={result.id}
-                    result={result}
-                    linkUrl={`/tv/${result.id}`}
-                  />
-                ))}
-              </Similar>
+              {details.similar.results.length ? (
+                <Similar details={details}>
+                  {details.similar.results.map((result) => (
+                    <TvCard
+                      key={result.id}
+                      result={result}
+                      linkUrl={`/tv/${result.id}`}
+                    />
+                  ))}
+                </Similar>
+              ) : (
+                <div className="load-similar">
+                  <p>데이터가 없습니다</p>
+                </div>
+              )}
             </section>
-            <section>
+            <section className="recommend-sec">
               <h2>이 TV 프로그램이 재미있었다면 추천드려요</h2>
-              <Recommendation details={details}>
-                {details.recommendations.results.map((result) => (
-                  <TvCard
-                    key={result.id}
-                    result={result}
-                    linkUrl={`/tv/${result.id}`}
-                  />
-                ))}
-              </Recommendation>
+              {details.recommendations.results.length ? (
+                <Recommendation details={details}>
+                  {details.recommendations.results.map((result) => (
+                    <TvCard
+                      key={result.id}
+                      result={result}
+                      linkUrl={`/tv/${result.id}`}
+                    />
+                  ))}
+                </Recommendation>
+              ) : (
+                <div className="load-recommend">
+                  <p>데이터가 없습니다</p>
+                </div>
+              )}
             </section>
           </main>
         )

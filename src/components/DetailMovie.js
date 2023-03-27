@@ -290,29 +290,41 @@ const DetailMovie = ({ details, loadingDetails }) => {
             <hr />
             <GallerySlide details={details} />
             <hr />
-            <section>
+            <section className="similar-sec">
               <h2>이 영화와 비슷한 작품</h2>
-              <Similar details={details}>
-                {details.similar.results.map((result) => (
-                  <MovieCard
-                    key={result.id}
-                    result={result}
-                    linkUrl={`/movie/${result.id}`}
-                  />
-                ))}
-              </Similar>
+              {details.similar.results.length ? (
+                <Similar details={details}>
+                  {details.similar.results.map((result) => (
+                    <MovieCard
+                      key={result.id}
+                      result={result}
+                      linkUrl={`/movie/${result.id}`}
+                    />
+                  ))}
+                </Similar>
+              ) : (
+                <div className="load-similar">
+                  <p>데이터가 없습니다</p>
+                </div>
+              )}
             </section>
-            <section>
+            <section className="recommend-sec">
               <h2>이 영화가 재미있었다면 추천드려요</h2>
-              <Recommendation details={details}>
-                {details.recommendations.results.map((result) => (
-                  <MovieCard
-                    key={result.id}
-                    result={result}
-                    linkUrl={`/movie/${result.id}`}
-                  />
-                ))}
-              </Recommendation>
+              {details.recommendations.results.length ? (
+                <Recommendation details={details}>
+                  {details.recommendations.results.map((result) => (
+                    <MovieCard
+                      key={result.id}
+                      result={result}
+                      linkUrl={`/movie/${result.id}`}
+                    />
+                  ))}
+                </Recommendation>
+              ) : (
+                <div className="load-recommend">
+                  <p>데이터가 없습니다</p>
+                </div>
+              )}
             </section>
           </main>
         )
