@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import "../styles/MyPage.scss";
 
 const MyPage = () => {
   const { isSignIn, user } = useSelector(({ accountReducer }) => ({
@@ -9,9 +10,9 @@ const MyPage = () => {
   }));
 
   return (
-    <>
+    <div className="body-flex">
       {isSignIn ? (
-        <div>
+        <div className="mypage-con">
           <h3>나의 정보</h3>
           <div>
             <p>Email : {user.email}</p>
@@ -22,8 +23,7 @@ const MyPage = () => {
       ) : (
         <Navigate to="/login" replace={true} />
       )}
-      <footer>푸터</footer>
-    </>
+    </div>
   );
 };
 

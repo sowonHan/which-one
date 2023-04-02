@@ -5,6 +5,7 @@
   align-items: center;
   column-gap: 35px;
   background-color: #1c242c;
+  flex-shrink: 0;
 
   .search-web {
     margin-left: auto;
@@ -45,6 +46,7 @@
   display: none;
   height: 120px;
   background-color: #1c242c;
+  flex-shrink: 0;
 }
 
 .top-con {

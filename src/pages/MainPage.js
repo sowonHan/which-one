@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./../components/Footer";
 import "../styles/MainPage.scss";
 
 const MainPage = () => {
@@ -45,7 +44,6 @@ const MainPage = () => {
           <p>Which One Demand On (WODO) 과 함께하세요.</p>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

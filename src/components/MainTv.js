@@ -13,7 +13,7 @@ const MainTv = ({
   loadingTop,
 }) => {
   return (
-    <main>
+    <div className="tv-con">
       <section className="slide-con-first">
         <h1>요즘 트렌드</h1>
         {loadingTrend ? (
@@ -68,7 +68,7 @@ const MainTv = ({
           )
         )}
       </section>
-    </main>
+    </div>
   );
 };
 

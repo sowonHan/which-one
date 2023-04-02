@@ -1,0 +1,63 @@
+.body-flex {
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  a:hover {
+    font-weight: 500;
+  }
+}
+
+.sign-title {
+  font: {
+    size: 3rem;
+    weight: 900;
+  }
+  margin-bottom: 45px;
+}
+
+.form-item {
+  width: 340px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  label {
+    font-weight: 500;
+  }
+
+  input::placeholder {
+    font: {
+      size: 0.9rem;
+      style: italic;
+    }
+  }
+
+  input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: red;
+  }
+
+  input:not(:focus):not(:placeholder-shown):valid {
+    border-color: black;
+  }
+}
+
+.join-button,
+.sign-button {
+  margin-top: 10px;
+  border: 0;
+  box-sizing: border-box;
+  background-color: #edd100;
+  cursor: pointer;
+  font: {
+    weight: 700;
+    size: 1.15rem;
+  }
+}
+
+.sign-button {
+  margin-bottom: 15px;
+}

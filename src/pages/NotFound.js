@@ -3,7 +3,7 @@ import "../styles/NotFound.scss";
 
 const NotFound = () => {
   return (
-    <>
+    <div className="body-flex">
       <div className="nf-container">
         <div className="title">
           <h1>페이지를</h1>
@@ -11,7 +11,7 @@ const NotFound = () => {
         </div>
         <p>주소가 올바른지 확인해주세요.</p>
       </div>
-    </>
+    </div>
   );
 };
 

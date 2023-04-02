@@ -2,11 +2,11 @@
   width: 100%;
   height: 400px;
   background-color: #1c242c;
-  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: aliceblue;
+  flex-shrink: 0;
 
   .info-row {
     display: flex;
