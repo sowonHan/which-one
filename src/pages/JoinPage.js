@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeInput, register, reset } from "../modules/account";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../styles/SignPage.scss";
 
 const JoinPage = () => {
@@ -39,7 +40,12 @@ const JoinPage = () => {
   );
 
   return (
-    <div className="body-flex">
+    <motion.div
+      className="body-flex"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <h1 className="sign-title">회원 가입</h1>
       <form onSubmit={onSubmit}>
         <div className="form-item">
@@ -95,7 +101,7 @@ const JoinPage = () => {
         </div>
         <button className="join-button">등록</button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

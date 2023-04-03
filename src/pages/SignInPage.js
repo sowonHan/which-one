@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeInput, signIn, reset } from "../modules/account";
 import { useNavigate, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../styles/SignPage.scss";
 
 const SignInPage = () => {
@@ -39,7 +40,12 @@ const SignInPage = () => {
   );
 
   return (
-    <div className="body-flex">
+    <motion.div
+      className="body-flex"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <h1 className="sign-title">로그인</h1>
       <form onSubmit={onSubmit}>
         <div className="form-item">
@@ -71,7 +77,7 @@ const SignInPage = () => {
         <button className="sign-button">로그인</button>
       </form>
       <Link to="/join">처음이신가요? 새 계정 만들러 가기</Link>
-    </div>
+    </motion.div>
   );
 };
 

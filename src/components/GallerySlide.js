@@ -17,7 +17,11 @@ const GallerySlide = ({ details }) => {
     infinite: true,
     speed: 600,
     slidesToShow:
-      details.images.backdrops.length < 5 ? details.images.backdrops.length : 5,
+      details.images.backdrops.length >= 5
+        ? 5
+        : details.images.backdrops.length === 4
+        ? 4
+        : 1,
   };
 
   return (

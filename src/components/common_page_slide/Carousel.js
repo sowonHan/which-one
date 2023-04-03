@@ -11,43 +11,43 @@ const Carousel = ({ children }) => {
     slidesToScroll: 2,
     responsive: [
       {
-        breakpoint: 1680,
+        breakpoint: 1835,
         settings: {
           slidesToShow: 7,
         },
       },
       {
-        breakpoint: 1470,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 6,
         },
       },
       {
-        breakpoint: 1260,
+        breakpoint: 1365,
         settings: {
           slidesToShow: 5,
         },
       },
       {
-        breakpoint: 1050,
+        breakpoint: 1140,
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 850,
+        breakpoint: 905,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 630,
+        breakpoint: 680,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 430,
+        breakpoint: 450,
         settings: {
           slidesToShow: 1,
         },

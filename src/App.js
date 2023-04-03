@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Layout from "./components/Layout";
 import MainPage from "./pages/MainPage";
 import MoviePage from "./pages/MoviePage";
@@ -16,7 +17,7 @@ import "./App.scss";
 
 function App() {
   return (
-    <>
+    <AnimatePresence>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
@@ -30,7 +31,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </AnimatePresence>
   );
 }
 

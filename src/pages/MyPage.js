@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../styles/MyPage.scss";
 
 const MyPage = () => {
@@ -10,7 +11,12 @@ const MyPage = () => {
   }));
 
   return (
-    <div className="body-flex">
+    <motion.div
+      className="body-flex"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       {isSignIn ? (
         <div className="mypage-con">
           <h3>나의 정보</h3>
@@ -23,7 +29,7 @@ const MyPage = () => {
       ) : (
         <Navigate to="/login" replace={true} />
       )}
-    </div>
+    </motion.div>
   );
 };
 

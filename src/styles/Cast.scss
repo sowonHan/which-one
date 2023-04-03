@@ -8,9 +8,9 @@
   }
 }
 
-.slide-cast {
+.slide-cast,
+.slide-cast-few {
   width: 85%;
-  margin-left: 60px;
 
   p {
     width: 150px;
@@ -19,6 +19,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+}
+
+.slide-cast {
+  margin-left: 60px;
 }
 
 .cast {
@@ -30,8 +34,8 @@
 
 .no-actor {
   width: 150px;
-  height: 200px;
-  background-color: #b4b4b4;
+  height: 225px;
+  background-color: darkgray;
   text-align: center;
   line-height: 200px;
 }

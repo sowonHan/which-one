@@ -1,9 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../styles/MainPage.scss";
 
 const MainPage = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <section className="first-con">
         <div className="first-text">
           <h2>어서 오세요! 어떤 작품을 보여드릴까요?</h2>
@@ -44,7 +49,7 @@ const MainPage = () => {
           <p>Which One Demand On (WODO) 과 함께하세요.</p>
         </div>
       </section>
-    </>
+    </motion.div>
   );
 };
 

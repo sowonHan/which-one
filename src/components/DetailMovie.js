@@ -35,13 +35,13 @@ const DetailMovie = ({ details, loadingDetails }) => {
       return "불러오는 중...";
     } else {
       if (details) {
-        const korea = details.release_dates.results.filter(
+        const korea = details.release_dates.results.find(
           (result) => result.iso_3166_1 === "KR"
         );
-        if (korea.length) {
-          if (korea[0].release_dates[0].certification === "") {
-            if (korea[0].release_dates.length > 1) {
-              const another = korea[0].release_dates.find(
+        if (korea) {
+          if (korea.release_dates[0].certification === "") {
+            if (korea.release_dates.length > 1) {
+              const another = korea.release_dates.find(
                 (date) => date.certification !== ""
               );
               if (another.certification === "All") {
@@ -53,21 +53,36 @@ const DetailMovie = ({ details, loadingDetails }) => {
               return "등급 정보 없음";
             }
           } else {
-            if (korea[0].release_dates[0].certification === "All") {
+            if (korea.release_dates[0].certification === "All") {
               return "전체관람가";
             } else {
-              return `${korea[0].release_dates[0].certification}세 이상 관람가`;
+              return `${korea.release_dates[0].certification}세 이상 관람가`;
             }
           }
         } else {
-          const origin = details.release_dates.results.filter(
-            (result) =>
-              result.iso_3166_1 === details.production_countries[0].iso_3166_1
-          );
-          if (origin.length) {
-            return origin[0].release_dates[0].certification;
+          if (details.production_countries.length) {
+            const origin = details.release_dates.results.find(
+              (result) =>
+                result.iso_3166_1 === details.production_countries[0].iso_3166_1
+            );
+            if (origin) {
+              if (origin.release_dates[0].certification === "") {
+                return "등급 정보 없음";
+              } else {
+                return origin.release_dates[0].certification;
+              }
+            } else {
+              return "개봉 정보 없음";
+            }
           } else {
-            return "개봉 정보 없음";
+            if (
+              details.release_dates.results[0].release_dates[0]
+                .certification === ""
+            ) {
+              return "등급 정보 없음";
+            } else {
+              return `${details.release_dates.results[0].iso_3166_1}-${details.release_dates.results[0].release_dates[0].certification}`;
+            }
           }
         }
       } else {
@@ -265,27 +280,57 @@ const DetailMovie = ({ details, loadingDetails }) => {
             <Cast details={details} />
             <section className="crew-sec">
               <h6>감독</h6>
-              {details.credits.crew.find((person) => person.job === "Director")
-                .profile_path ? (
-                <img
-                  className="crew-img"
-                  src={`${imageTMDB}/w185${
-                    details.credits.crew.find(
-                      (person) => person.job === "Director"
-                    ).profile_path
-                  }`}
-                  alt="감독의 사진"
-                />
-              ) : (
-                <div className="load-credit">No Image</div>
-              )}
-              <p className="crew-name">
-                {
+              {details.credits.crew ? (
+                details.credits.crew.find(
+                  (person) => person.job === "Director"
+                ) ? (
                   details.credits.crew.find(
                     (person) => person.job === "Director"
-                  ).name
-                }
-              </p>
+                  ).profile_path ? (
+                    <img
+                      className="crew-img"
+                      src={`${imageTMDB}/w185${
+                        details.credits.crew.find(
+                          (person) => person.job === "Director"
+                        ).profile_path
+                      }`}
+                      alt="감독의 사진"
+                    />
+                  ) : (
+                    <div className="load-credit">No Image</div>
+                  )
+                ) : (
+                  <div></div>
+                )
+              ) : (
+                <div></div>
+              )}
+              {details.credits.crew ? (
+                details.credits.crew.find(
+                  (person) => person.job === "Director"
+                ) ? (
+                  <p className="crew-name">
+                    {
+                      details.credits.crew.find(
+                        (person) => person.job === "Director"
+                      ).name
+                    }
+                  </p>
+                ) : (
+                  <div className="no-creator">
+                    <p>정보가 없습니다.</p>
+                    <a
+                      href={`https://www.themoviedb.org/movie/${details.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      제작진 보러 가기
+                    </a>
+                  </div>
+                )
+              ) : (
+                <p className="no-crew">정보가 없습니다.</p>
+              )}
             </section>
             <hr />
             <GallerySlide details={details} />

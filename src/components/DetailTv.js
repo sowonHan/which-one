@@ -37,7 +37,15 @@ const DetailTv = ({ details, loadingDetails }) => {
             const origin = details.content_ratings.results.find(
               (result) => result.iso_3166_1 === details.origin_country[0]
             );
-            return origin.rating;
+            if (origin) {
+              if (origin.rating === "") {
+                return "등급 정보 없음";
+              } else {
+                return origin.rating;
+              }
+            } else {
+              return `${details.content_ratings.results[0].iso_3166_1}-${details.content_ratings.results[0].rating}`;
+            }
           }
         }
       } else {

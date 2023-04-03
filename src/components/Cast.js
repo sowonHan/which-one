@@ -15,7 +15,12 @@ const Cast = ({ details }) => {
     <>
       <section className="cast-sec">
         <h6>출연진</h6>
-        <Slider {...settings} className="slide-cast">
+        <Slider
+          {...settings}
+          className={
+            details.credits.cast.length >= 5 ? "slide-cast" : "slide-cast-few"
+          }
+        >
           {details.credits.cast.slice(0, 11).map((actor) => (
             <div key={actor.order}>
               {actor.profile_path ? (
