@@ -9,6 +9,32 @@ const Cast = ({ details }) => {
     infinite: false,
     speed: 400,
     slidesToShow: 5,
+    responsive: [
+      {
+        breakpoint: 1540,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1230,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 920,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 610,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (

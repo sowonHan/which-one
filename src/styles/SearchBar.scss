@@ -11,7 +11,7 @@
 
 .input-container {
   height: 40px;
-  margin-top: 15px;
+  margin-top: 10px;
 
   input {
     width: 100%;
@@ -52,5 +52,17 @@
     height: 60px;
     margin-right: 20px;
     background-color: lightslategray;
+  }
+}
+
+@media (min-width: 316px) and (max-width: 365px) {
+  input::placeholder {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 315px) {
+  input::placeholder {
+    font-size: 0.8rem;
   }
 }

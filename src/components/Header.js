@@ -55,7 +55,10 @@ const Header = () => {
       <nav className="nav-mobile">
         <div className="top-con">
           <div className="logo-wrapper">
-            <img src={logo} alt="사이트 로고" />
+            <img
+              src={`${process.env.PUBLIC_URL}/logo192px.png`}
+              alt="사이트 로고"
+            />
           </div>
           <ul className="menu-list">
             <li>

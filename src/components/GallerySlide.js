@@ -9,7 +9,76 @@ const GallerySlide = ({ details }) => {
     infinite: true,
     speed: 600,
     slidesToShow:
-      details.images.posters.length < 9 ? details.images.posters.length : 9,
+      details.images.posters.length >= 9
+        ? 9
+        : details.images.posters.length >= 5
+        ? details.images.posters.length
+        : 1,
+    responsive: [
+      {
+        breakpoint: 1790,
+        settings: {
+          slidesToShow:
+            details.images.posters.length >= 8
+              ? 8
+              : details.images.posters.length >= 5
+              ? details.images.posters.length
+              : 1,
+        },
+      },
+      {
+        breakpoint: 1585,
+        settings: {
+          slidesToShow:
+            details.images.posters.length >= 7
+              ? 7
+              : details.images.posters.length >= 5
+              ? details.images.posters.length
+              : 1,
+        },
+      },
+      {
+        breakpoint: 1370,
+        settings: {
+          slidesToShow:
+            details.images.posters.length >= 6
+              ? 6
+              : details.images.posters.length === 5
+              ? 5
+              : 1,
+        },
+      },
+      {
+        breakpoint: 1180,
+        settings: {
+          slidesToShow: details.images.posters.length >= 5 ? 5 : 1,
+        },
+      },
+      {
+        breakpoint: 975,
+        settings: {
+          slidesToShow: details.images.posters.length >= 4 ? 4 : 1,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: details.images.posters.length >= 3 ? 3 : 1,
+        },
+      },
+      {
+        breakpoint: 585,
+        settings: {
+          slidesToShow: details.images.posters.length >= 2 ? 2 : 1,
+        },
+      },
+      {
+        breakpoint: 390,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   let setBackdrop = {
@@ -22,6 +91,32 @@ const GallerySlide = ({ details }) => {
         : details.images.backdrops.length === 4
         ? 4
         : 1,
+    responsive: [
+      {
+        breakpoint: 1850,
+        settings: {
+          slidesToShow: details.images.backdrops.length >= 4 ? 4 : 1,
+        },
+      },
+      {
+        breakpoint: 1480,
+        settings: {
+          slidesToShow: details.images.backdrops.length >= 3 ? 3 : 1,
+        },
+      },
+      {
+        breakpoint: 1110,
+        settings: {
+          slidesToShow: details.images.backdrops.length >= 2 ? 2 : 1,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (

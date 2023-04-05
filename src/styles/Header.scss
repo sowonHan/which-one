@@ -10,23 +10,25 @@
   .search-web {
     margin-left: auto;
     min-width: 700px;
-    // 사이즈 줄면 최소너비값 조절
+  }
+
+  .logo-wrapper {
+    margin-left: 25px;
+  }
+
+  .menu-list {
+    column-gap: 30px;
   }
 }
 
 .logo-wrapper {
-  max-width: 150px;
-  margin-left: 25px;
-
   img {
-    max-width: 150px;
     display: block;
   }
 }
 
 .menu-list {
   display: flex;
-  column-gap: 30px;
 
   li {
     color: white;
@@ -47,14 +49,103 @@
   height: 120px;
   background-color: #1c242c;
   flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+
+  .top-con {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+
+    .menu-list {
+      column-gap: 25px;
+    }
+
+    .logo-wrapper {
+      max-width: 40px;
+      margin-left: 20px;
+    }
+  }
+
+  .account-mobile {
+    margin-left: auto;
+  }
 }
 
-.top-con {
-  display: flex;
-  align-items: center;
-  column-gap: 35px;
+@media (max-width: 1292px) {
+  .nav-web {
+    .search-web {
+      min-width: 355px;
+    }
+  }
 }
 
-.account-mobile {
-  margin-left: auto;
+@media (max-width: 947px) {
+  .nav-web {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+  }
+}
+
+@media (min-width: 366px) and (max-width: 447px) {
+  .nav-mobile {
+    .top-con {
+      column-gap: 15px;
+
+      .logo-wrapper {
+        margin-left: 12px;
+      }
+
+      .menu-list {
+        column-gap: 15px;
+
+        .menu-button {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 295px) and (max-width: 365px) {
+  .nav-mobile {
+    .top-con {
+      column-gap: 10px;
+
+      .logo-wrapper {
+        margin-left: 10px;
+      }
+
+      .menu-list {
+        column-gap: 10px;
+
+        .menu-button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 294px) {
+  .nav-mobile {
+    .top-con {
+      column-gap: 9px;
+
+      .logo-wrapper {
+        margin-left: 8px;
+      }
+
+      .menu-list {
+        column-gap: 10px;
+
+        .menu-button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
 }

@@ -39,3 +39,10 @@
   text-align: center;
   line-height: 200px;
 }
+
+@media (max-width: 1810px) {
+  .slide-cast,
+  .slide-cast-few {
+    width: auto;
+  }
+}

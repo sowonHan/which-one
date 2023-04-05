@@ -64,3 +64,31 @@
 .sign-out {
   font-size: 1.01rem;
 }
+
+@media (min-width: 448px) and (max-width: 947px) {
+  .dropdown {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 447px) {
+  .dropdown {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 365px) {
+  .account-icon {
+    justify-content: center;
+    width: 75px;
+  }
+
+  .hide-menu {
+    width: 70px;
+  }
+
+  .dropdown-text,
+  .sign-out {
+    font-size: 0.82rem;
+  }
+}
