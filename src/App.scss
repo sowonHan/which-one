@@ -21,3 +21,83 @@
   margin-left: 0;
   margin-right: 0;
 }
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 2.5rem;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 45%;
+  }
+
+  .slick-prev {
+    left: -45px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 2rem;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 45%;
+  }
+
+  .slick-prev {
+    left: -35px;
+  }
+}
+
+@media (min-width: 571px) and (max-width: 768px) {
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 1.5rem;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 46%;
+  }
+
+  .slick-prev {
+    left: -27px;
+  }
+}
+
+@media (min-width: 351px) and (max-width: 570px) {
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 1rem;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 46%;
+  }
+
+  .slick-prev {
+    left: -19px;
+  }
+}
+
+@media (max-width: 350px) {
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 0.8rem;
+  }
+
+  .slick-prev,
+  .slick-next {
+    top: 46%;
+  }
+
+  .slick-prev {
+    left: -17px;
+  }
+}

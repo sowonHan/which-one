@@ -92,7 +92,7 @@
 
   h2 {
     font-size: 2.55rem;
-    margin: 30px 0 23px;
+    margin: 25px 0 23px;
   }
 
   p {
@@ -157,6 +157,150 @@
     background: {
       position: 0% 40%;
       size: auto, auto, cover;
+    }
+  }
+}
+
+@media (min-width: 656px) and (max-width: 768px) {
+  .first-text {
+    h2 {
+      font-size: 2.2rem;
+      margin: 12px 0 8px;
+    }
+  }
+}
+
+@media (min-width: 540px) and (max-width: 655px) {
+  .first-text {
+    h2 {
+      font-size: 1.8rem;
+      margin: 12px 0 7px;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: 461px) and (max-width: 539px) {
+  .first-text {
+    h2 {
+      font-size: 1.5rem;
+      margin: 12px 0 7px;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (min-width: 411px) and (max-width: 460px) {
+  .first-text {
+    h2 {
+      font-size: 1.3rem;
+      margin: 0 0 5px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 360px) and (max-width: 410px) {
+  .first-text {
+    h2 {
+      font-size: 1.1rem;
+      margin: 5px 0 6px;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 359px) {
+  .first-text {
+    h2 {
+      font-size: 0.95rem;
+      margin: 0 0 6px;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 890px) {
+  .last-text {
+    h2 {
+      font-size: 2.3rem;
+      margin: 15px 0 15px;
+    }
+  }
+}
+
+@media (min-width: 696px) and (max-width: 768px) {
+  .last-text {
+    h2 {
+      font-size: 2rem;
+      margin: 10px 0 12px;
+    }
+  }
+}
+
+@media (min-width: 590px) and (max-width: 695px) {
+  .last-text {
+    h2 {
+      font-size: 1.7rem;
+      margin: 5px 0 11px;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 589px) {
+  .last-text {
+    h2 {
+      font-size: 1.4rem;
+      margin: 8px 0 11px;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+  .last-text {
+    h2 {
+      font-size: 1.1rem;
+      margin: 8px 0 5px;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .last-text {
+    h2 {
+      font-size: 0.85rem;
+      margin: 15px 0 10px;
+    }
+
+    p {
+      font-size: 0.8rem;
     }
   }
 }
@@ -255,7 +399,7 @@
   .third-text,
   .fourth-text {
     h3 {
-      font-size: 2rem;
+      font-size: 1.9rem;
     }
 
     p {
@@ -285,7 +429,7 @@
   .third-text,
   .fourth-text {
     h3 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 10px;
     }
 

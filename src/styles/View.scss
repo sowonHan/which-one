@@ -55,3 +55,33 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .informaiton {
+    width: auto;
+    padding: 0 15px;
+  }
+
+  .view-container {
+    .poster {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1024px) {
+  .view-container {
+    width: auto;
+    border-block: 0;
+    border-bottom: 1px solid lightgray;
+
+    .poster {
+      margin-left: 10px;
+    }
+  }
+
+  .informaiton {
+    width: 370px;
+    padding: 0 20px;
+  }
+}

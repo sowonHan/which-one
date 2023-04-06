@@ -56,3 +56,28 @@
     }
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .boxoffice-container {
+    width: auto;
+  }
+
+  .nav-container {
+    justify-content: center;
+
+    .button-wrapper {
+      margin: 0 0 0 50px;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1023px) {
+  .boxoffice-container {
+    width: auto;
+    height: 1100px;
+  }
+
+  .nav-container {
+    margin-bottom: 10px;
+  }
+}
