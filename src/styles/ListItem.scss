@@ -1,10 +1,16 @@
 .item-con {
-  height: 35px;
   border-bottom: 1px solid lightgray;
   text-align: center;
 
   &:hover {
     background-color: #b7bdc5;
+  }
+
+  td {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .new {
@@ -24,4 +30,10 @@
 .down {
   color: steelblue;
   margin: 0;
+}
+
+@media (max-width: 1500px) {
+  .item-con {
+    font-size: 0.95rem;
+  }
 }

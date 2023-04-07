@@ -57,9 +57,10 @@
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1500px) {
+@media (max-width: 1500px) {
   .boxoffice-container {
     width: auto;
+    align-items: center;
   }
 
   .nav-container {
@@ -69,15 +70,35 @@
       margin: 0 0 0 50px;
     }
   }
+
+  .page-container {
+    width: 98%;
+  }
 }
 
-@media (min-width: 1024px) and (max-width: 1023px) {
+@media (max-width: 1023px) {
   .boxoffice-container {
-    width: auto;
-    height: 1100px;
+    height: 1050px;
+    margin: 20px 0;
+    justify-content: center;
+    row-gap: 20px;
   }
 
   .nav-container {
     margin-bottom: 10px;
+  }
+
+  .page-container {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 580px) and (max-width: 740px) {
+  .container-name {
+    font-size: 2.2rem;
+  }
+
+  .date-range {
+    font-size: 1.3rem;
   }
 }

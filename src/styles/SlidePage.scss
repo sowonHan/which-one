@@ -8,21 +8,21 @@
 .slide-con-first,
 .slide-con-last {
   height: 390px;
+  width: 99.5%;
 
   h1 {
     margin-bottom: 15px;
   }
 }
 
-.slide-container,
-.slide-con-first {
-  margin-bottom: 35px;
+.slide-container {
+  margin: 0 auto 35px;
 }
 
 .slide-con-first {
-  margin-top: 50px;
+  margin: 40px auto 35px;
 }
 
 .slide-con-last {
-  margin-bottom: 80px;
+  margin: 0 auto 80px;
 }
