@@ -65,10 +65,6 @@
 
   .nav-container {
     justify-content: center;
-
-    .button-wrapper {
-      margin: 0 0 0 50px;
-    }
   }
 
   .page-container {
@@ -78,14 +74,8 @@
 
 @media (max-width: 1023px) {
   .boxoffice-container {
-    height: 1050px;
     margin: 20px 0;
     justify-content: center;
-    row-gap: 20px;
-  }
-
-  .nav-container {
-    margin-bottom: 10px;
   }
 
   .page-container {
@@ -93,12 +83,101 @@
   }
 }
 
-@media (min-width: 580px) and (max-width: 740px) {
-  .container-name {
-    font-size: 2.2rem;
+@media (max-width: 580px) {
+  .nav-container {
+    .date-range {
+      font-size: 1.1rem;
+    }
+
+    .button-wrapper {
+      .nav-button {
+        width: 50px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 581px) and (max-width: 1500px) {
+  .nav-container {
+    .button-wrapper {
+      margin: 0 0 0 50px;
+    }
+  }
+}
+
+@media (min-width: 581px) and (max-width: 1023px) {
+  .boxoffice-container {
+    height: 1050px;
+
+    .container-name {
+      font-size: 2.2rem;
+    }
   }
 
-  .date-range {
-    font-size: 1.3rem;
+  .nav-container {
+    .date-range {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (min-width: 421px) and (max-width: 580px) {
+  .boxoffice-container {
+    height: 560px;
+
+    .container-name {
+      font-size: 2rem;
+    }
+  }
+
+  .nav-container {
+    .button-wrapper {
+      margin: 0 0 0 20px;
+      column-gap: 9px;
+    }
+  }
+}
+
+@media (min-width: 421px) and (max-width: 1023px) {
+  .boxoffice-container {
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .boxoffice-container {
+    row-gap: 5px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    row-gap: 7px;
+    margin-bottom: 4px;
+
+    .button-wrapper {
+      margin: 0;
+      column-gap: 20px;
+    }
+  }
+}
+
+@media (min-width: 331px) and (max-width: 420px) {
+  .boxoffice-container {
+    height: 530px;
+
+    .container-name {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  .boxoffice-container {
+    height: 520px;
+
+    .container-name {
+      font-size: 1.9rem;
+    }
   }
 }

@@ -7,8 +7,12 @@ const ListItem = ({ data, onView }) => {
     <tr onMouseOver={() => onView(data.movieNm)} className="item-con">
       <td>{data.rank}</td>
       <td>{data.movieNm}</td>
-      <td>{data.audiAcc.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
-      <td>{data.showCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+      <td className="no-mobile">
+        {data.audiAcc.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+      </td>
+      <td className="no-mobile">
+        {data.showCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+      </td>
       <td>
         {data.rankOldAndNew === "NEW" ? (
           <span className="new">{data.rankOldAndNew}</span>

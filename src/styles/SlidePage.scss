@@ -26,3 +26,13 @@
 .slide-con-last {
   margin: 0 auto 80px;
 }
+
+@media (max-width: 400px) {
+  .slide-container,
+  .slide-con-first,
+  .slide-con-last {
+    h1 {
+      font-size: 1.57rem;
+    }
+  }
+}

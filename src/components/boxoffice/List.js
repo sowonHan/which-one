@@ -9,8 +9,8 @@ const List = ({ children }) => {
           <tr>
             <th className="table-head">순번</th>
             <th className="table-head">영화 제목</th>
-            <th className="table-head">누적관객수</th>
-            <th className="table-head">당일상영수</th>
+            <th className="table-head no-mobile">누적관객수</th>
+            <th className="table-head no-mobile">당일상영수</th>
             <th className="table-head">증감률</th>
           </tr>
         </thead>

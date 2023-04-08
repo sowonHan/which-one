@@ -32,8 +32,28 @@
   margin: 0;
 }
 
-@media (max-width: 1500px) {
+@media (min-width: 331px) and (max-width: 1500px) {
   .item-con {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .item-con {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .no-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .item-con {
+    td {
+      max-width: 170px;
+    }
   }
 }

@@ -61,11 +61,24 @@
     .poster {
       width: auto;
       margin-left: 20px;
+      min-width: 190px;
     }
   }
 
   .informaiton {
-    padding: 0 15px 0 25px;
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .informaiton {
+    h4 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -103,7 +116,7 @@
 
 @media (max-width: 660px) {
   .view-container {
-    height: 460px;
+    height: 470px;
 
     .poster {
       margin-left: 20px;
@@ -122,9 +135,9 @@
   }
 }
 
-@media (min-width: 580px) and (max-width: 610px) {
+@media (min-width: 581px) and (max-width: 610px) {
   .view-container {
-    margin-top: 0;
+    margin-top: 15px;
   }
 }
 
