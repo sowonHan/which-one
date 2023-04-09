@@ -95,31 +95,31 @@ const DetailMovie = ({ details, loadingDetails }) => {
     <>
       {loadingDetails ? (
         <main className="detail-container">
-          <section className="first-sec">
-            <div className="load-poster"></div>
+          <section className="general-sec">
+            <div className="poster load-color"></div>
             <div>
               <p className="big-text">불러오는 중...</p>
             </div>
           </section>
           <hr />
-          <section>
+          <section className="synopsis-sec">
             <p>불러오는 중...</p>
           </section>
           <hr />
-          <section>
+          <section className="cast-sec">
             <div>
               <h6>출연진</h6>
               <div className="load-credit"></div>
               <p>불러오는 중...</p>
             </div>
           </section>
-          <section>
+          <section className="crew-sec">
             <h6>감독</h6>
             <div className="load-credit"></div>
             <p>불러오는 중...</p>
           </section>
           <hr />
-          <section>
+          <section className="gallery-sec">
             <h2>영화 이미지</h2>
             <div className="load-gallery">
               <div className="sample"></div>
@@ -133,14 +133,14 @@ const DetailMovie = ({ details, loadingDetails }) => {
             </div>
           </section>
           <hr />
-          <section>
+          <section className="similar-sec">
             <h2>비슷한 작품</h2>
             <div>
               <div className="load-similar"></div>
               <p>불러오는 중...</p>
             </div>
           </section>
-          <section>
+          <section className="recommend-sec">
             <h2>추천 작품</h2>
             <div>
               <div className="load-recommend"></div>

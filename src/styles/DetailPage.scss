@@ -8,18 +8,16 @@
   }
 }
 
+.load-color {
+  background-color: darkgray;
+}
+
 .general-sec {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 600px;
   margin: 30px 0 20px;
-
-  .load-poster {
-    width: 300px;
-    height: 420px;
-    background-color: darkgray;
-  }
 
   .poster {
     width: 300px;
@@ -193,4 +191,135 @@
   background-color: darkgray;
   text-align: center;
   line-height: 280px;
+}
+
+@media (max-width: 665px) {
+  .general-sec {
+    flex-direction: column;
+    height: auto;
+    row-gap: 15px;
+    margin: 30px 0 21px;
+  }
+
+  .synopsis-sec {
+    width: 95%;
+    margin: 25px auto 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .synopsis-sec {
+    h6 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@media (min-width: 371px) and (max-width: 800px) {
+  .general-text {
+    .name {
+      font-size: 2.1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .general-text {
+    .name {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .buy,
+  .rent {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 530px) {
+  .recommend-sec {
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (min-width: 341px) and (max-width: 530px) {
+  .recommend-sec {
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .similar-sec {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .recommend-sec {
+    h2 {
+      font-size: 1.08rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1140px) {
+  .general-text {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 881px) and (max-width: 1023px) {
+  .general-text {
+    margin-left: 70px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 880px) {
+  .general-text {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 666px) and (max-width: 800px) {
+  .general-text {
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 371px) and (max-width: 665px) {
+  .general-text {
+    width: 300px;
+    margin-left: 9px;
+  }
+}
+
+@media (max-width: 370px) {
+  .general-sec {
+    .poster {
+      width: 220px;
+      height: auto;
+    }
+  }
+
+  .general-text {
+    width: 220px;
+    margin-left: 0;
+  }
 }

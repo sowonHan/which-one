@@ -16,3 +16,17 @@
     white-space: pre-wrap;
   }
 }
+
+@media (max-width: 370px) {
+  .flatrate {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+
+    .logo-con {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+  }
+}
