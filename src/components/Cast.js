@@ -11,25 +11,25 @@ const Cast = ({ details }) => {
     slidesToShow: 5,
     responsive: [
       {
-        breakpoint: 1540,
+        breakpoint: 1650,
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 1230,
+        breakpoint: 1335,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 920,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 610,
+        breakpoint: 720,
         settings: {
           slidesToShow: 1,
         },
@@ -44,7 +44,7 @@ const Cast = ({ details }) => {
         <Slider
           {...settings}
           className={
-            details.credits.cast.length >= 5 ? "slide-cast" : "slide-cast-few"
+            details.credits.cast.length === 1 ? "slide-cast-only" : "slide-cast"
           }
         >
           {details.credits.cast.slice(0, 11).map((actor) => (

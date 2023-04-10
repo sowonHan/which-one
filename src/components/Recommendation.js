@@ -15,7 +15,7 @@ const Recommendation = ({ details, children }) => {
         : 1,
     responsive: [
       {
-        breakpoint: 1835,
+        breakpoint: 1840,
         settings: {
           slidesToShow:
             details.recommendations.results.length >= 7
@@ -26,13 +26,13 @@ const Recommendation = ({ details, children }) => {
         },
       },
       {
-        breakpoint: 1600,
+        breakpoint: 1610,
         settings: {
           slidesToShow: details.recommendations.results.length >= 6 ? 6 : 1,
         },
       },
       {
-        breakpoint: 1365,
+        breakpoint: 1380,
         settings: {
           slidesToShow: details.recommendations.results.length >= 5 ? 5 : 1,
         },
@@ -44,19 +44,19 @@ const Recommendation = ({ details, children }) => {
         },
       },
       {
-        breakpoint: 905,
+        breakpoint: 916,
         settings: {
           slidesToShow: details.recommendations.results.length >= 3 ? 3 : 1,
         },
       },
       {
-        breakpoint: 680,
+        breakpoint: 670,
         settings: {
           slidesToShow: details.recommendations.results.length >= 2 ? 2 : 1,
         },
       },
       {
-        breakpoint: 450,
+        breakpoint: 442,
         settings: {
           slidesToShow: 1,
         },

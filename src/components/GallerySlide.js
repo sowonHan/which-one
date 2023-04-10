@@ -61,7 +61,7 @@ const GallerySlide = ({ details }) => {
         },
       },
       {
-        breakpoint: 780,
+        breakpoint: 787,
         settings: {
           slidesToShow: details.images.posters.length >= 3 ? 3 : 1,
         },

@@ -1,10 +1,18 @@
 .slide-custom {
   margin: 0 auto;
-  width: 90vw;
+  width: 90.5vw;
 }
 
-@media (max-width: 450px) {
+@media (min-width: 443px) and (max-width: 768px) {
   .slide-custom {
+    width: 92vw;
+  }
+}
+
+@media (max-width: 442px) {
+  .slide-custom {
+    width: 93vw;
+
     .slick-list {
       margin: 0 auto;
       width: 50%;
@@ -70,7 +78,7 @@
   }
 }
 
-@media (min-width: 451px) and (max-width: 570px) {
+@media (min-width: 443px) and (max-width: 570px) {
   .slide-custom {
     .slick-prev::before,
     .slick-next::before {
@@ -83,7 +91,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 442px) {
   .slide-custom {
     .slick-prev::before,
     .slick-next::before {
