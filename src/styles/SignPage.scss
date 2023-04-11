@@ -15,7 +15,7 @@
     size: 3rem;
     weight: 900;
   }
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 .form-item {
@@ -60,4 +60,40 @@
 
 .sign-button {
   margin-bottom: 15px;
+}
+
+@media (min-width: 451px) and (max-width: 500px) {
+  .sign-title {
+    font-size: 2.3rem;
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 450px) {
+  .body-flex {
+    min-height: 460px;
+
+    a {
+      font-size: 0.9rem;
+    }
+  }
+
+  .sign-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .form-item {
+    width: 220px;
+    flex-direction: column;
+
+    label {
+      align-self: flex-start;
+    }
+  }
+
+  .join-button,
+  .sign-button {
+    font-size: 1rem;
+  }
 }

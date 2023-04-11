@@ -65,19 +65,37 @@
   font-size: 1.01rem;
 }
 
-@media (min-width: 448px) and (max-width: 947px) {
+@media (max-width: 1520px) {
+  .sign-in {
+    .user-name {
+      margin-right: 5px;
+    }
+  }
+}
+
+@media (min-width: 626px) and (max-width: 1175px) {
   .dropdown {
     margin-right: 10px;
   }
 }
 
-@media (max-width: 447px) {
+@media (max-width: 625px) {
+  .sign-in {
+    .user-name {
+      font-size: 0.9rem;
+    }
+  }
+
   .dropdown {
     margin-right: 0;
   }
+
+  .hide-menu {
+    width: 85px;
+  }
 }
 
-@media (max-width: 365px) {
+@media (max-width: 530px) {
   .account-icon {
     justify-content: center;
     width: 75px;
@@ -90,5 +108,13 @@
   .dropdown-text,
   .sign-out {
     font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .sign-in {
+    .user-name {
+      display: none;
+    }
   }
 }
