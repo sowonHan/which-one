@@ -11,7 +11,7 @@ export const axiosTMDB = axios.create({
 });
 
 export const axiosKofic = axios.create({
-  baseURL: "http://kobis.or.kr/kobisopenapi/webservice/rest",
+  baseURL: "https://kobis.or.kr/kobisopenapi/webservice/rest",
   params: {
     key: "c63b8e05f8a42c09f7ead978b94bb128",
   },

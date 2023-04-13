@@ -33,7 +33,11 @@ const Footer = () => {
         </div>
         <div className="bottom-row">
           <p>2023 Which-One Demand-On.</p>
-          <a href="https://github.com/sowonHan/which-one">
+          <a
+            href="https://github.com/sowonHan/which-one"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>About Project</span>
             <BiLinkExternal />
           </a>
