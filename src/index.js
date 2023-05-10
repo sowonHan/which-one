@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from "redux";
 import ReduxThunk from "redux-thunk";
 import rootReducer from "./modules";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import ScrollToTop from "./hooks/ScrollToTop";
@@ -23,10 +23,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter basename="/which-one">
+      <HashRouter>
         <ScrollToTop />
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </PersistGate>
   </Provider>
 );

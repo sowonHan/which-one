@@ -56,7 +56,7 @@ const JoinPage = () => {
             id="email"
             value={email}
             onChange={onChange}
-            pattern="^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}$"
+            pattern="^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}$"
             title="sample12@gmail.com"
             required
           />
@@ -81,9 +81,10 @@ const JoinPage = () => {
             placeholder="8~12글자의 숫자,영문,특수문자"
             value={password}
             onChange={onChange}
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-])[A-Za-z\d!@#$%^&*-]{8,12}$"
+            pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*-])[A-Za-z\\d!@#$%^&*-]{8,12}$"
             title="8~12글자의 숫자,영문,특수문자"
             required
+            autoComplete="on"
           />
         </div>
         <div className="form-item">
@@ -94,9 +95,10 @@ const JoinPage = () => {
             placeholder="8~12글자의 숫자,영문,특수문자"
             value={pwConfirm}
             onChange={onPassword}
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-])[A-Za-z\d!@#$%^&*-]{8,12}$"
+            pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*-])[A-Za-z\\d!@#$%^&*-]{8,12}$"
             title="8~12글자의 숫자,영문,특수문자"
             required
+            autoComplete="on"
           />
         </div>
         <button className="join-button">등록</button>

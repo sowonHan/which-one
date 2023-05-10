@@ -56,7 +56,7 @@ const SignInPage = () => {
             id="email"
             value={input.email}
             onChange={onChange}
-            pattern="^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}$"
+            pattern="^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}$"
             title="sample12@gmail.com"
             required
           />
@@ -69,9 +69,10 @@ const SignInPage = () => {
             placeholder="8~12글자의 숫자,영문,특수문자"
             value={input.password}
             onChange={onChange}
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*-])[A-Za-z\d!@#$%^&*-]{8,12}$"
+            pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*-])[A-Za-z\\d!@#$%^&*-]{8,12}$"
             title="8~12글자의 숫자,영문,특수문자"
             required
+            autoComplete="on"
           />
         </div>
         <button className="sign-button">로그인</button>
