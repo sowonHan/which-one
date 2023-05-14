@@ -34,7 +34,7 @@ React, Redux-thunk 기반의 미디어 검색 사이트
   - Redux Persist
 - **비동기 작업 처리 도구**
   - Axios
-  - Redux-thunk
+  - Redux Thunk
 - **라우팅 도구**
   - React Router 6.8.2
 - **스타일 도구**
