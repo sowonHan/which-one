@@ -2,13 +2,13 @@
 
 ![tv](https://github.com/sowonHan/which-one/assets/100406001/697cd5c2-3653-4d16-b2af-da8b0d8aa568)
 
-React, Redux-thunk 기반의 미디어 검색 사이트
+React, Redux-thunk 기반의 박스오피스 조회 및 미디어 콘텐츠 검색 사이트
 
 > [배포링크](https://sowonhan.github.io/which-one/)
 
 ## 🎬 WODO 프로젝트 소개
 
-`Which One Demand On (이하 WODO)`는 실시간으로 개봉 중인 극장 영화의 박스오피스 순위를 조회하고 영화, 드라마, TV 프로그램, 배우에 대한 정보를 검색할 수 있는 반응형 웹사이트입니다.
+`Which One Demand On (이하 WODO)`는 한국에서 실시간으로 개봉 중인 극장 영화의 박스오피스 순위를 조회하고 영화, 드라마, TV 프로그램, 배우에 대한 정보를 검색할 수 있는 반응형 웹사이트입니다.
 
 `WODO`에서 '영화'는 극장 개봉 작품과 OTT 독점 공개 작품을 모두 포함합니다.  
 또한 'TV 프로그램'은 드라마, 애니메이션, 예능, 다큐멘터리 등 공중파 TV와 OTT 서비스에서 제공하는 모든 프로그램을 의미합니다.
