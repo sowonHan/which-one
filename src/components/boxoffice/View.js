@@ -27,12 +27,19 @@ const View = ({ details, posters, now }) => {
         <div className="poster">
           {poster === "" ? (
             posters ? (
-              <Link to={`/movie/${sampleImg.id}`}>
-                <img
-                  src={`${imageTMDB}/w342${sampleImg.poster_path}`}
-                  alt={`${sampleImg.title}의 포스터`}
-                />
-              </Link>
+              sampleImg ? (
+                <Link to={`/movie/${sampleImg.id}`}>
+                  <img
+                    src={`${imageTMDB}/w342${sampleImg.poster_path}`}
+                    alt={`${sampleImg.title}의 포스터`}
+                  />
+                </Link>
+              ) : (
+                <div className="loading">
+                  <h6>포스터 검색 실패</h6>
+                  <p>상세정보 조회는 검색창을 이용해주시기 바랍니다.</p>
+                </div>
+              )
             ) : (
               <div className="loading"></div>
             )
