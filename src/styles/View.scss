@@ -16,6 +16,7 @@
       margin: 0 auto;
       object-fit: contain;
       display: block;
+      cursor: pointer;
     }
 
     .loading {
@@ -23,6 +24,15 @@
       height: 420px;
       margin: 0 auto;
       background-color: lightgray;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        padding: 10px 60px 0;
+        text-align: center;
+      }
     }
   }
 }
@@ -62,6 +72,14 @@
       width: auto;
       margin-left: 20px;
       min-width: 190px;
+
+      .loading {
+        width: auto;
+
+        p {
+          padding: 10px 10px 0;
+        }
+      }
     }
   }
 

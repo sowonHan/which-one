@@ -7,16 +7,21 @@ const View = ({ details, posters, now }) => {
   const sampleImg = posters ? posters[0].data.results[0] : "";
   const sampleInfo = details ? details[0].data.movieInfoResult.movieInfo : "";
   const { detail, poster } = now;
+
   const realPoster = useCallback(() => {
     if (poster) {
       const real = poster.data.results.find(
         (result) =>
           result.title === detail.data.movieInfoResult.movieInfo.movieNm
       );
+      const first = poster.data.results;
+
       if (real) {
         return real;
+      } else if (first.length) {
+        return first[0];
       } else {
-        return poster.data.results[0];
+        return null;
       }
     }
   }, [poster, detail]);
@@ -36,20 +41,25 @@ const View = ({ details, posters, now }) => {
                 </Link>
               ) : (
                 <div className="loading">
-                  <h6>포스터 검색 실패</h6>
+                  <h3>포스터 검색 실패</h3>
                   <p>상세정보 조회는 검색창을 이용해주시기 바랍니다.</p>
                 </div>
               )
             ) : (
               <div className="loading"></div>
             )
-          ) : (
+          ) : realPoster() ? (
             <Link to={`/movie/${realPoster().id}`}>
               <img
                 src={`${imageTMDB}/w342${realPoster().poster_path}`}
                 alt={`${realPoster().title}의 포스터`}
               />
             </Link>
+          ) : (
+            <div className="loading">
+              <h3>포스터 검색 실패</h3>
+              <p>상세정보 조회는 검색창을 이용해주시기 바랍니다.</p>
+            </div>
           )}
         </div>
         <div className="informaiton">
