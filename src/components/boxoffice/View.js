@@ -153,15 +153,17 @@ const View = ({ details, posters, now }) => {
                 {detail.data.movieInfoResult.movieInfo.nations[0].nationNm}
               </p>
               <p className="middel-p">
-                {`${detail.data.movieInfoResult.movieInfo.audits[0].watchGradeNm.slice(
-                  0,
-                  3
-                )} ${detail.data.movieInfoResult.movieInfo.audits[0].watchGradeNm.slice(
-                  3,
-                  5
-                )} ${detail.data.movieInfoResult.movieInfo.audits[0].watchGradeNm.slice(
-                  -3
-                )}`}
+                {detail.data.movieInfoResult.movieInfo.audits.length
+                  ? `${detail.data.movieInfoResult.movieInfo.audits[0].watchGradeNm.slice(
+                      0,
+                      3
+                    )} ${detail.data.movieInfoResult.movieInfo.audits[0].watchGradeNm.slice(
+                      3,
+                      5
+                    )} ${detail.data.movieInfoResult.movieInfo.audits[0].watchGradeNm.slice(
+                      -3
+                    )}`
+                  : "심의 등급 없음"}
               </p>
               <p>
                 {detail.data.movieInfoResult.movieInfo.genres.map(
